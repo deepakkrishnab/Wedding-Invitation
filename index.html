@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Wedding invitation for Deepak Krishna B & Nivedha K S – Wednesday, 20 January 2027, Tiruvannamalai.">
+<meta name="theme-color" content="#800000">
+<title>Deepak Krishna B &amp; Nivedha K S – Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Playfair+Display:wght@400;600&family=Noto+Serif+Tamil:wght@400;600;700&family=Arima+Madurai:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#800000;--gold:#FFD700;--white:#fff;--script:'Great Vibes','Noto Serif Tamil',cursive;--serif:'Cormorant Garamond','Playfair Display','Noto Serif Tamil',serif;--script-ta:'Arima Madurai','Noto Serif Tamil',cursive}
+*{box-sizing:border-box;margin:0}
+html,body{overflow-x:hidden}
+html{scrollbar-gutter:stable}
+body{background:var(--maroon);color:var(--white);font-family:var(--serif);text-align:center;line-height:1.7;letter-spacing:.02em;font-size:clamp(16px,2.3vw,19px)}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.08;
+background-image:url("assets/Chikku kollam.png");background-repeat:repeat;background-size:150px;background-position:center}
+@media (min-width:700px){body::before{background-size:210px}}
+@media (min-width:1100px){body::before{background-size:270px}}
+/* fades scrolling content out smoothly, starting well ahead of where the thali is locked at the very top; only shown once the thali is actually locked */
+.top-fade{position:fixed;top:0;left:0;right:0;height:clamp(220px,34vw,380px);z-index:4;pointer-events:none;opacity:0;transition:opacity .5s ease;
+background:linear-gradient(to bottom, var(--maroon) 0%, var(--maroon) 18%, rgba(128,0,0,.85) 40%, rgba(128,0,0,0) 100%)}
+.top-fade.show{opacity:1}
+h1,h2,h3,p{overflow-wrap:break-word;word-break:break-word}
+main,.bar{position:relative;z-index:1}
+.bar{position:fixed;top:0;left:0;right:0;display:flex;justify-content:flex-end;gap:10px;padding:calc(env(safe-area-inset-top,0px) + 10px) 12px 10px;z-index:50;pointer-events:none}
+.bar button{pointer-events:auto;background:rgba(128,0,0,.8);color:var(--gold);border:1px solid var(--gold);border-radius:20px;padding:6px 14px;font:600 14px var(--serif);cursor:pointer}
+.gold{color:var(--gold)}
+/* banana tree side art, big and pinned exactly at the bottom corners for the whole page, flush with no gap */
+/* each png has built-in transparent padding around the artwork on all sides; shift horizontally AND vertically so the trunk/leaves touch the screen edges with no gap (overflow is clipped by body{overflow-x:hidden}; fixed elements are naturally clipped by the viewport vertically) */
+.side-tree{position:fixed;bottom:0;width:clamp(150px,34vw,300px);height:auto;z-index:0;pointer-events:none;opacity:.75}
+.side-tree.left{left:0;transform:translate(-42%,6.4%)}
+.side-tree.right{right:0;transform:translate(30%,4.8%)}
+@media (max-width:360px){.side-tree{width:clamp(110px,38vw,150px)}}
+@media (min-width:361px){main{padding-left:clamp(70px,16vw,160px);padding-right:clamp(70px,16vw,160px)}}
+@media (max-width:360px){main{padding-left:clamp(50px,18vw,80px);padding-right:clamp(50px,18vw,80px)}}
+@media (min-width:1100px){.side-tree{width:clamp(220px,20vw,360px)}}
+/* flower garlands, pinned at the top corners, above the banana trees */
+.corner-flower{position:fixed;top:0;width:clamp(55px,11vw,110px);height:auto;z-index:0;pointer-events:none;opacity:.75}
+.corner-flower.left{left:0;transform:translateX(-18%)}
+.corner-flower.right{right:0;transform:translateX(18%)}
+@media (max-width:360px){.corner-flower{width:clamp(42px,13vw,70px)}}
+@media (min-width:1100px){.corner-flower{width:clamp(80px,7vw,130px)}}
+/* bottom progress timeline: shows which part of the invitation the visitor is on, themed with the maroon/gold palette. Plain small round dots, no numbers/checkmarks, sized so the active/done states never collide with the connecting lines */
+.progress-track{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);transform:translateX(-50%);
+display:flex;align-items:center;z-index:60;background:rgba(50,0,0,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+border:1px solid rgba(255,215,0,.3);border-radius:30px;padding:9px 12px;box-shadow:0 4px 16px rgba(0,0,0,.45)}
+.progress-track .step{position:relative;flex:none;width:22px;height:22px;border-radius:50%;cursor:pointer;
+border:0;background:none;padding:0;display:flex;align-items:center;justify-content:center}
+.progress-track .step .indicator{width:8px;height:8px;border-radius:50%;background:rgba(255,215,0,.35);
+transition:background .35s ease,width .35s ease,height .35s ease,box-shadow .35s ease}
+.progress-track .line{flex:none;width:clamp(14px,4vw,26px);height:2px;background:rgba(255,215,0,.25);transition:background .35s ease}
+.progress-track .step.active .indicator{width:11px;height:11px;background:var(--gold);box-shadow:0 0 0 3px rgba(255,215,0,.22)}
+.progress-track .step.done .indicator{background:rgba(255,215,0,.85)}
+.progress-track .line.done{background:var(--gold)}
+@media (max-width:360px){.progress-track{padding:7px 9px}.progress-track .step{width:18px;height:18px}.progress-track .step .indicator{width:7px;height:7px}.progress-track .step.active .indicator{width:9px;height:9px}.progress-track .line{width:clamp(10px,3.5vw,18px)}}
+/* starting page: logo starts big & centered (fixed to the viewport), then animates (scrubbed to scroll) into a small top-left corner mark and stays docked there */
+#start{min-height:100svh;position:relative}
+#startLogo{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(240px,42vw,620px);aspect-ratio:1/1;
+opacity:1;z-index:6}
+/* badge sits below the logo medallion; its white backing is blended away so only the gold artwork shows */
+.badge{position:absolute;left:50%;top:calc(50% + clamp(140px,21vw,330px));transform:translateX(-50%);
+width:clamp(220px,30vw,420px);mix-blend-mode:multiply;z-index:1;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));pointer-events:none}
+/* hero */
+#hero{min-height:95svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding-top:60px}
+.hero-names{opacity:0;transform:scale(.6);font-family:var(--script);color:var(--gold);font-size:clamp(20px,8vw,64px);line-height:1.2;text-align:center;padding:0 16px;max-width:94vw}
+.hero-names span[data-k]{white-space:nowrap;display:inline-block;max-width:100%}
+.hero-names .amp{font-size:.55em;display:block}
+/* the names stay on screen (as a fixed overlay) all the way from the hero through the Ghibli-style couple art, shrinking to sit under the art once it appears, then release once the venue/reception details arrive */
+.hero-names.locked{position:fixed!important;margin:0;z-index:7;top:48vh;left:50%}
+/* Save the Date dissolves in from the background at a fixed spot below the names (no sliding up), then dissolves back out once the art takes over */
+#savedate{min-height:46svh;display:flex;align-items:center;justify-content:center}
+.savedate-overlay{opacity:0;text-align:center;padding:0 16px}
+.savedate-overlay.locked{position:fixed!important;top:63vh;left:50%;transform:translateX(-50%);z-index:6;width:min(92vw,700px);pointer-events:none}
+/* the marriage date revealed big and sparkling above the Save the Date label */
+.sparkle-date{font-family:var(--script);font-size:clamp(26px,7.5vw,56px);line-height:1.15;margin-bottom:2px;
+background:linear-gradient(100deg,var(--gold) 20%,#fff8dc 40%,#fff 50%,#fff8dc 60%,var(--gold) 80%);
+background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+text-shadow:0 0 22px rgba(255,215,0,.55);animation:sparkleShine 3.2s linear infinite}
+/* weekday sits small below the big date, same sparkling gold treatment */
+.sparkle-weekday{font-family:var(--script);font-size:clamp(14px,3.2vw,22px);line-height:1.2;margin-bottom:10px;
+background:linear-gradient(100deg,var(--gold) 20%,#fff8dc 40%,#fff 50%,#fff8dc 60%,var(--gold) 80%);
+background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+text-shadow:0 0 14px rgba(255,215,0,.5);animation:sparkleShine 3.2s linear infinite}
+@keyframes sparkleShine{0%{background-position:250% 0}100%{background-position:-250% 0}}
+body.ta .sparkle-date{font-family:var(--script-ta);font-weight:900}
+body.ta .sparkle-weekday{font-family:var(--script-ta);font-weight:700}
+#thali{width:clamp(240px,26vw,460px);filter:drop-shadow(0 8px 20px rgba(0,0,0,.5))}
+/* locked: the tail (coins + pendant + bead row) settles and stays pinned at the very top for the rest of the page */
+#thali.locked{position:fixed!important;left:0;right:0;margin:0 auto;z-index:5;overflow:hidden;
+filter:drop-shadow(0 6px 14px rgba(0,0,0,.5))}
+#thali.locked img{position:absolute;bottom:0;left:50%;transform:translateX(-50%)}
+section{padding:60px 20px;max-width:760px;margin:0 auto}
+.script{font-family:var(--script);color:var(--gold);font-size:clamp(28px,8vw,104px);line-height:1.15;white-space:nowrap;text-align:center}
+.small{letter-spacing:3px;text-transform:uppercase;font-size:clamp(13px,2.9vw,20px);color:var(--gold);white-space:nowrap;text-align:center;display:block}
+/* the Ghibli-style couple art sits above the fixed hero names when they overlap while scrolling past */
+#art{width:clamp(240px,34vw,480px);min-height:240px;margin:0 auto;display:flex;align-items:center;justify-content:center;position:relative;z-index:9}
+#art img{max-width:100%}
+.ph{border:2px dashed var(--gold);border-radius:16px;padding:40px 16px;color:var(--gold);font-size:14px;opacity:.8;width:100%}
+.card{border:1px solid var(--gold);border-radius:16px;padding:22px 16px;margin:18px 0;background:rgba(0,0,0,.18);font-size:clamp(16px,2.6vw,20px)}
+.card h3{font-family:var(--script);color:var(--gold);font-size:clamp(20px,6vw,42px);font-weight:400;white-space:nowrap;text-align:center}
+.pin{display:inline-flex;align-items:center;gap:8px;margin-top:10px;color:var(--gold);text-decoration:none;border:1px solid var(--gold);border-radius:24px;padding:8px 18px;font-weight:700;font-size:clamp(14px,2.2vw,17px)}
+.pin svg{width:18px;height:18px;fill:var(--gold)}
+#cd{display:flex;justify-content:center;gap:clamp(8px,1vw,16px);margin:22px 0;flex-wrap:wrap}
+#cd div{min-width:clamp(60px,7vw,90px);border:1px solid var(--gold);border-radius:12px;padding:10px 4px}
+#cd b{display:block;font-size:clamp(24px,3vw,36px);color:var(--gold)}
+#cd span{font-size:clamp(11px,1.8vw,13px);letter-spacing:1px;text-transform:uppercase}
+.btn{background:var(--gold);color:var(--maroon);border:0;border-radius:30px;padding:13px clamp(26px,3vw,42px);font:700 clamp(16px,2.2vw,20px) var(--serif);cursor:pointer;margin-top:14px}
+/* footer gets extra bottom padding so the fixed progress bar never covers its text */
+footer{padding:30px 20px calc(env(safe-area-inset-bottom,0px) + 100px);font-size:clamp(15px,2.4vw,18px);color:var(--gold)}
+body.ta{line-height:1.9}
+body.ta .small{letter-spacing:0;font-family:var(--script-ta);font-weight:700}
+body.ta .script{font-family:var(--script-ta);font-weight:900;font-size:clamp(30px,6.5vw,78px);line-height:1.35}
+body.ta .card h3{font-family:var(--script-ta);font-weight:700;font-size:clamp(20px,3.6vw,34px)}
+body.ta .btn{font-family:var(--script-ta);font-weight:700}
+body.ta p,body.ta footer,body.ta #cd span{font-family:'Noto Serif Tamil',serif}
+@media (max-width:400px){
+ section{padding:50px 14px}
+ #cd{gap:6px}
+ #cd div{min-width:54px;padding:8px 2px}
+ #cd b{font-size:21px}
+ .card{padding:18px 12px}
+}
+#mute{padding:0!important;width:clamp(32px,6vw,40px);height:clamp(32px,6vw,40px);border-radius:50%;display:flex;align-items:center;justify-content:center}
+#mute svg{width:60%;height:60%;fill:var(--gold);filter:drop-shadow(0 0 3px rgba(255,215,0,.5))}
+#mute #muteOffIcon{display:none}
+#mute.muted #muteOnIcon{display:none}
+#mute.muted #muteOffIcon{display:block;fill:#d8a6a6}
+#lang{padding:0!important;width:clamp(32px,6vw,40px);height:clamp(32px,6vw,40px);border-radius:50%;display:flex;align-items:center;justify-content:center}
+#lang svg{width:60%;height:60%;fill:var(--gold);filter:drop-shadow(0 0 3px rgba(255,215,0,.5))}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <button id="lang" aria-label="Language">
+    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+  </button>
+  <button id="mute" aria-label="Music">
+    <svg id="muteOnIcon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16.5 12A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4z"/><path d="M14 3.23v2.06c2.89 1.2 5 4.03 5 6.71s-2.11 5.51-5 6.71v2.06c4-1.25 6.5-5.06 6.5-8.77s-2.5-7.52-6.5-8.77z"/></svg>
+    <svg id="muteOffIcon" viewBox="0 0 24 24"><path d="M12 4 9.91 6.09 12 8.18V4z"/><path d="M4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21 21 19.73 4.27 3z"/><path d="M19 12c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.9 8.9 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z"/><path d="M16.5 12c0-1.77-1-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63z"/></svg>
+  </button>
+</div>
+
+<div class="top-fade" id="topFade" aria-hidden="true"></div>
+
+<img src="assets/logo.png" alt="D &amp; N" id="startLogo">
+
+<img src="assets/left bannana tree.png" alt="" class="side-tree left" aria-hidden="true">
+<img src="assets/right bannana tree.png" alt="" class="side-tree right" aria-hidden="true">
+<img src="assets/flowers.png" alt="" class="corner-flower left" aria-hidden="true">
+<img src="assets/flowers.png" alt="" class="corner-flower right" aria-hidden="true">
+
+<main>
+  <section id="start">
+    <img src="assets/badge.png" alt="Wedding Invitation" class="badge">
+  </section>
+
+  <div id="hero">
+    <div id="thali">
+      <img src="assets/Thalli.png" alt="Golden Thali" style="width:100%" id="thaliImg" decoding="async">
+    </div>
+    <div class="hero-names" id="heroNames"><span data-k="groom">Deepak Krishna B</span><span class="amp">&amp;</span><span data-k="bride">Nivedha K S</span></div>
+  </div>
+
+  <section id="savedate">
+    <div class="savedate-overlay" id="savedateOverlay">
+      <p class="sparkle-date" data-k="datebig">20 January 2027</p>
+      <p class="sparkle-weekday" data-k="weekday">Wednesday</p>
+      <p class="small" data-k="save">Save the Date</p>
+      <p data-k="intro" style="margin:14px 0 18px">With the blessings of the Almighty and our elders, we joyfully invite you to bless the wedding of</p>
+    </div>
+  </section>
+
+  <section id="artSection">
+    <div id="art"><img src="assets/couple.png" alt="Deepak Krishna B and Nivedha K S" id="coupleImg" loading="lazy" decoding="async"></div>
+  </section>
+
+  <section id="details">
+    <p class="small" data-k="date">Wednesday, 20 January 2027</p>
+    <div class="card rv">
+      <h3 data-k="e1">Muhurtham</h3>
+      <p data-k="t1">6:00 AM – 7:30 AM</p>
+      <p data-k="v1">Arulmigu Kallyana Sunderservarar Mandabam,<br>Annamalaiyar Kovil, Tiruvannamalai</p>
+      <a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Arulmigu+Kalyana+Sundareswarar+Mandapam+Annamalaiyar+Temple+Tiruvannamalai">
+        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z"/></svg><span data-k="map">View Venue</span></a>
+    </div>
+    <div class="card rv">
+      <h3 data-k="e2">Wedding Reception</h3>
+      <p data-k="t2">10:30 AM</p>
+      <p data-k="v2">Shri Meenachi Marriage Hall,<br>Tiruvannamalai</p>
+      <a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shri+Meenachi+Marriage+Hall+Tiruvannamalai">
+        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z"/></svg><span data-k="map2">View Venue</span></a>
+    </div>
+
+    <div id="cd">
+      <div><b id="d">00</b><span data-k="cd">Days</span></div>
+      <div><b id="h">00</b><span data-k="ch">Hours</span></div>
+      <div><b id="m">00</b><span data-k="cm">Minutes</span></div>
+      <div><b id="s">00</b><span data-k="cs">Seconds</span></div>
+    </div>
+    <button class="btn" id="cal" data-k="cal">Add to Calendar</button>
+  </section>
+
+  <footer data-k="close">Your presence and blessings will make our day complete.</footer>
+</main>
+
+<nav class="progress-track" id="progressTrack" aria-label="Page progress">
+  <button class="step" type="button" data-target="#start" aria-label="Welcome"><span class="indicator"></span></button>
+  <span class="line"></span>
+  <button class="step" type="button" data-target="#savedate" aria-label="Save the Date"><span class="indicator"></span></button>
+  <span class="line"></span>
+  <button class="step" type="button" data-target="#artSection" aria-label="Our Story"><span class="indicator"></span></button>
+  <span class="line"></span>
+  <button class="step" type="button" data-target="#details" aria-label="Details"><span class="indicator"></span></button>
+</nav>
+
+<audio id="bgm" loop preload="auto" src="assets/music.mp3"></audio>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+/* ---------- language ---------- */
+const T={
+en:{save:"Save the Date",intro:"With the blessings of the Almighty and our elders, we joyfully invite you to bless the wedding of",groom:"Deepak Krishna B",bride:"Nivedha K S",date:"Wednesday, 20 January 2027",weekday:"Wednesday",datebig:"20 January 2027",e1:"Muhurtham",t1:"6:00 AM – 7:30 AM",v1:"Arulmigu Kallyana Sunderservarar Mandabam,<br>Annamalaiyar Kovil, Tiruvannamalai",e2:"Wedding Reception",t2:"10:30 AM",v2:"Shri Meenachi Marriage Hall,<br>Tiruvannamalai",map:"View Venue",map2:"View Venue",cd:"Days",ch:"Hours",cm:"Minutes",cs:"Seconds",cal:"Add to Calendar",close:"Your presence and blessings will make our day complete.",btn:"தமிழ்"},
+ta:{save:"தேதியைக் குறித்துக் கொள்ளுங்கள்",intro:"இறைவனின் அருளாலும் பெரியோர்களின் ஆசியாலும், எங்கள் திருமண விழாவில் கலந்து வாழ்த்த அன்புடன் அழைக்கிறோம்",groom:"தீபக் கிருஷ்ணா பி",bride:"நிவேதா கே எஸ்",date:"புதன்கிழமை, 20 ஜனவரி 2027",weekday:"புதன்கிழமை",datebig:"20 ஜனவரி 2027",e1:"முகூர்த்தம்",t1:"காலை 6:00 – 7:30",v1:"அருள்மிகு கல்யாண சுந்தரேஸ்வரர் மண்டபம்,<br>அண்ணாமலையார் கோவில், திருவண்ணாமலை",e2:"திருமண வரவேற்பு",t2:"காலை 10:30",v2:"ஸ்ரீ மீனாட்சி திருமண மண்டபம்,<br>திருவண்ணாமலை",map:"இடத்தைப் பார்க்க",map2:"இடத்தைப் பார்க்க",cd:"நாட்கள்",ch:"மணி",cm:"நிமிடம்",cs:"வினாடி",cal:"நாட்காட்டியில் சேர்க்க",close:"தங்கள் வருகையும் ஆசியும் எங்கள் மகிழ்ச்சியை நிறைவு செய்யும்.",btn:"EN"}};
+let lang="en";
+function setLang(l){lang=l;document.documentElement.lang=l;document.body.classList.toggle("ta",l==="ta");
+ document.querySelectorAll("[data-k]").forEach(e=>e.innerHTML=T[l][e.dataset.k]);
+ $("lang").setAttribute("aria-label",l==="en"?"Switch to Tamil":"Switch to English")}
+$("lang").onclick=()=>setLang(lang==="en"?"ta":"en");
+
+/* ---------- music ---------- */
+const bgm=$("bgm");
+document.addEventListener("click",()=>{bgm.play().catch(()=>{})},{once:true});
+$("mute").onclick=()=>{bgm.muted=!bgm.muted;$("mute").classList.toggle("muted",bgm.muted)};
+
+/* ---------- placeholders for missing artwork ---------- */
+$("thaliImg").onerror=function(){
+ if(!this.isConnected)return;
+ const zigzag=(x0,y0,x1,y1,n,amp)=>{let d=`M${x0} ${y0}`;for(let i=1;i<=n;i++){const t=i/n,x=x0+(x1-x0)*t,y=y0+(y1-y0)*t,off=(i%2?amp:-amp);d+=` L${(x+off).toFixed(1)} ${y.toFixed(1)}`}return d};
+ const coin=(cx,cy)=>{let s=`<circle cx="${cx}" cy="${cy}" r="20" fill="url(#g)" stroke="#5c0a0a" stroke-width="2"/><circle cx="${cx}" cy="${cy}" r="12" fill="none" stroke="#5c0a0a" stroke-width="1.3"/>`;
+  for(let i=0;i<8;i++){const a=i*Math.PI/4,x1=cx+7*Math.cos(a),y1=cy+7*Math.sin(a),x2=cx+11*Math.cos(a),y2=cy+11*Math.sin(a);s+=`<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="#5c0a0a" stroke-width="1.3"/>`}
+  s+=`<circle cx="${cx}" cy="${cy-30}" r="4" fill="url(#g)" stroke="#5c0a0a" stroke-width="1.3"/>`;
+  return s};
+ let s='<svg viewBox="0 0 220 240" width="100%"><defs><radialGradient id="g" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#fff6c8"/><stop offset=".55" stop-color="#FFD700"/><stop offset="1" stop-color="#a6780a"/></radialGradient></defs>';
+ /* braided chain straps converging toward the pendant cluster */
+ s+=`<path d="${zigzag(26,14,88,150,9,9)}" fill="none" stroke="url(#g)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>`;
+ s+=`<path d="${zigzag(194,14,132,150,9,9)}" fill="none" stroke="url(#g)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>`;
+ s+='<circle cx="26" cy="14" r="7" fill="none" stroke="url(#g)" stroke-width="4"/><circle cx="194" cy="14" r="7" fill="none" stroke="url(#g)" stroke-width="4"/>';
+ /* short beaded row where the straps meet the pendant cluster */
+ [96,108,120].forEach(x=>{s+=`<circle cx="${x}" cy="156" r="6" fill="url(#g)" stroke="#5c0a0a" stroke-width="1.3"/>`});
+ /* left & right sun-ray coin medallions (kasu) */
+ s+=coin(58,190);
+ s+=coin(162,190);
+ /* central temple-spire (mango) pendant, single tapered silhouette */
+ s+='<circle cx="110" cy="152" r="4" fill="url(#g)" stroke="#5c0a0a" stroke-width="1.3"/>';
+ s+='<path d="M90 158 L130 158 L126 196 A16 20 0 0 1 94 196 Z" fill="url(#g)" stroke="#5c0a0a" stroke-width="2.5"/>';
+ [104,116].forEach(x=>{s+=`<line x1="${x}" y1="170" x2="${x}" y2="192" stroke="#5c0a0a" stroke-width="1.3"/>`});
+ s+='<circle cx="110" cy="210" r="3.5" fill="#5c0a0a"/>';
+ s+='</svg>';
+ this.outerHTML=s};
+$("coupleImg").onerror=function(){if(!this.isConnected)return;this.outerHTML='<div class="ph">Couple illustration<br>(upload assets/couple.png)</div>'};
+if($("thaliImg").complete&&!$("thaliImg").naturalWidth)$("thaliImg").onerror();
+if($("coupleImg").complete&&!$("coupleImg").naturalWidth)$("coupleImg").onerror();
+
+/* ---------- GSAP ---------- */
+function initScroll(){
+ gsap.registerPlugin(ScrollTrigger);
+ /* thali drifts down for the first 20% of the hero's scroll, then smoothly settles into a locked peek (tail only) pinned at the very top for the rest of the page */
+ gsap.to("#thali",{y:52,ease:"none",scrollTrigger:{trigger:"#hero",start:"top top",end:"20% top",scrub:true}});
+ /* dynamic peek: mobile screens show noticeably more of the thali; tablet/desktop keep the sizing that already looked right */
+ function peekHeight(){
+  const w=window.innerWidth;
+  if(w<480)return Math.min(w*.92,380);
+  return Math.max(180,Math.min(w*.34,280));
+ }
+ function lockThali(){
+  const el=$("thali");
+  if(el.classList.contains("locked"))return;
+  const rect=el.getBoundingClientRect();
+  el.classList.add("locked");
+  gsap.set(el,{top:rect.top,height:rect.height,y:0});
+  gsap.to(el,{top:0,height:peekHeight(),duration:.7,ease:"power2.out"});
+  $("topFade").classList.add("show");
+ }
+ function unlockThali(){
+  const el=$("thali");
+  if(!el.classList.contains("locked"))return;
+  gsap.killTweensOf(el);
+  el.classList.remove("locked");
+  gsap.set(el,{clearProps:"top,height"});
+  $("topFade").classList.remove("show");
+ }
+ window.addEventListener("resize",()=>{
+  const el=$("thali");
+  if(el.classList.contains("locked"))gsap.set(el,{top:0,height:peekHeight()});
+ });
+ ScrollTrigger.create({trigger:"#hero",start:"20% top",endTrigger:document.body,end:"bottom bottom",
+  onEnter:lockThali,onLeaveBack:unlockThali});
+ /* bride & groom names pop in and stay on screen as a fixed overlay all the way through Save the Date and the couple art, shrinking to rest under the art, then release once the venue/reception details arrive */
+ function lockNames(){
+  const el=$("heroNames");
+  if(el.classList.contains("locked"))return;
+  el.classList.add("locked");
+  gsap.set(el,{xPercent:-50,yPercent:-50,scale:.6,opacity:0});
+  gsap.to(el,{opacity:1,scale:1,duration:.9,ease:"back.out(1.7)"});
+ }
+ function unlockNames(){
+  const el=$("heroNames");
+  if(!el.classList.contains("locked"))return;
+  gsap.killTweensOf(el);
+  gsap.to(el,{opacity:0,duration:.4,onComplete:()=>{el.classList.remove("locked");gsap.set(el,{clearProps:"all"})}});
+ }
+ ScrollTrigger.create({trigger:"#hero",start:"20% top",endTrigger:"#details",end:"top 75%",
+  onEnter:lockNames,onLeave:unlockNames,onEnterBack:lockNames,onLeaveBack:unlockNames});
+ /* shrink and settle under the art as it scrolls into view (explicit fromTo so GSAP never captures the unlocked natural flow position as its start) */
+ gsap.fromTo("#heroNames",{top:"48vh",scale:1},{top:"88vh",scale:.62,ease:"none",
+  scrollTrigger:{trigger:"#artSection",start:"top 65%",end:"top 15%",scrub:true}});
+
+ /* Save the Date dissolves in from the background at a fixed spot below the names (no sliding up), then dissolves back out once the art takes over */
+ function lockSavedate(){
+  const el=$("savedateOverlay");
+  if(el.classList.contains("locked"))return;
+  el.classList.add("locked");
+  gsap.to(el,{opacity:1,duration:1.1,ease:"power1.out"});
+ }
+ function unlockSavedate(){
+  const el=$("savedateOverlay");
+  if(!el.classList.contains("locked"))return;
+  gsap.killTweensOf(el);
+  gsap.to(el,{opacity:0,duration:.6,onComplete:()=>{el.classList.remove("locked");gsap.set(el,{clearProps:"all"})}});
+ }
+ ScrollTrigger.create({trigger:"#savedateOverlay",start:"top 85%",endTrigger:"#artSection",end:"top 55%",
+  onEnter:lockSavedate,onLeave:unlockSavedate,onEnterBack:lockSavedate,onLeaveBack:unlockSavedate});
+ gsap.utils.toArray(".rv").forEach((e,i)=>gsap.from(e,{opacity:0,y:20,duration:1,delay:(i%3)*.15,scrollTrigger:{trigger:e,start:"top 88%"}}));
+ gsap.from("#startLogo",{opacity:0,duration:1.2,ease:"power2.out"});
+ gsap.from("#hero",{opacity:0,duration:1.2});
+
+ /* bottom progress timeline: highlights which of the 4 stages (Welcome / Save the Date / Our Story / Details) the visitor is currently on */
+ const progressSteps=gsap.utils.toArray("#progressTrack .step");
+ const progressLines=gsap.utils.toArray("#progressTrack .line");
+ function setStep(i){
+  progressSteps.forEach((s,j)=>{s.classList.toggle("active",j===i);s.classList.toggle("done",j<i)});
+  progressLines.forEach((l,j)=>l.classList.toggle("done",j<i));
+ }
+ progressSteps.forEach((s,i)=>{
+  ScrollTrigger.create({trigger:s.dataset.target,start:"top center",end:"bottom center",
+   onEnter:()=>setStep(i),onEnterBack:()=>setStep(i)});
+  s.addEventListener("click",()=>{
+   document.querySelector(s.dataset.target).scrollIntoView({behavior:"smooth",block:"start"});
+  });
+ });
+ setStep(0);
+
+ /* logo starts big & centered, then slides+shrinks smoothly into a small top-left corner mark as #start is scrolled through */
+ let logoCornerTween=null;
+ function setupLogoCornerAnim(){
+  const el=$("startLogo");
+  if(logoCornerTween){logoCornerTween.scrollTrigger.kill();logoCornerTween.kill()}
+  gsap.set(el,{clearProps:"top,left,width,transform"});
+  const rect=el.getBoundingClientRect();
+  if(!rect.width){requestAnimationFrame(setupLogoCornerAnim);return}
+  const targetSize=Math.max(64,Math.min(window.innerWidth*.11,120));
+  const cornerX=16,cornerY=16;
+  gsap.set(el,{top:rect.top,left:rect.left,width:rect.width,transform:"none"});
+  logoCornerTween=gsap.to(el,{top:cornerY,left:cornerX,width:targetSize,ease:"none",
+   scrollTrigger:{trigger:"#start",start:"top top",end:"bottom top",scrub:true}});
+  ScrollTrigger.refresh();
+ }
+ const logoImg=$("startLogo");
+ if(logoImg.complete)setupLogoCornerAnim();else logoImg.addEventListener("load",setupLogoCornerAnim,{once:true});
+ window.addEventListener("resize",()=>{clearTimeout(window._logoResizeT);window._logoResizeT=setTimeout(setupLogoCornerAnim,200)});
+
+ /* badge fades out (and is visually disabled) as the user scrolls it away, well before the logo finishes docking */
+ gsap.to(".badge",{opacity:0,ease:"none",scrollTrigger:{trigger:"#start",start:"top top",end:"55% top",scrub:true}});
+ /* re-measure all scroll triggers once every image has finished loading (and laid out), otherwise sections that load late throw off later triggers like the art-section shrink */
+ window.addEventListener("load",()=>ScrollTrigger.refresh());
+ $("coupleImg").addEventListener("load",()=>ScrollTrigger.refresh());
+}
+initScroll();
+
+/* ---------- countdown (IST) ---------- */
+const target=new Date("2027-01-20T06:00:00+05:30").getTime();
+function tick(){let d=Math.max(0,target-Date.now()),p=n=>String(n).padStart(2,"0");
+ $("d").textContent=p(Math.floor(d/864e5));$("h").textContent=p(Math.floor(d/36e5)%24);
+ $("m").textContent=p(Math.floor(d/6e4)%60);$("s").textContent=p(Math.floor(d/1e3)%60)}
+tick();setInterval(tick,1000);
+
+/* ---------- calendar (.ics generated in page) ---------- */
+$("cal").onclick=()=>{
+ const ev=(id,s,e,n,loc)=>`BEGIN:VEVENT\r\nUID:${id}@deepak-nivi-wedding\r\nDTSTAMP:20261118T000000Z\r\nDTSTART:${s}\r\nDTEND:${e}\r\nSUMMARY:${n}\r\nLOCATION:${loc}\r\nEND:VEVENT\r\n`;
+ const ics="BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Wedding//EN\r\n"+
+  ev("muhurtham","20270120T003000Z","20270120T020000Z","Deepak Krishna B & Nivedha K S – Muhurtham","Arulmigu Kallyana Sunderservarar Mandabam\\, Annamalaiyar Kovil\\, Tiruvannamalai")+
+  ev("reception","20270120T050000Z","20270120T070000Z","Deepak Krishna B & Nivedha K S – Wedding Reception","Shri Meenachi Marriage Hall\\, Tiruvannamalai")+"END:VCALENDAR";
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));
+ a.download="deepak-nivi-wedding.ics";document.body.appendChild(a);a.click();a.remove()};
+</script>
+</body>
+</html>
