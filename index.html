@@ -769,10 +769,12 @@ tick();setInterval(tick,1000);
 
 /* ---------- calendar (.ics generated in page) ---------- */
 $("cal").onclick=()=>{
- const ev=(id,s,e,n,loc)=>`BEGIN:VEVENT\r\nUID:${id}@deepak-nivi-wedding\r\nDTSTAMP:20261118T000000Z\r\nDTSTART:${s}\r\nDTEND:${e}\r\nSUMMARY:${n}\r\nLOCATION:${loc}\r\nEND:VEVENT\r\n`;
+ const alarm=(t,d)=>`BEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:${d}\r\nTRIGGER:${t}\r\nEND:VALARM\r\n`;
+ const alarms=n=>alarm("-P7D",n+" is in one week – book your travel if you haven't yet")+alarm("-P1D",n+" is tomorrow")+alarm("-PT2H",n+" starts in 2 hours");
+ const ev=(id,s,e,n,loc,url)=>`BEGIN:VEVENT\r\nUID:${id}@deepak-nivi-wedding\r\nDTSTAMP:20261118T000000Z\r\nDTSTART:${s}\r\nDTEND:${e}\r\nSUMMARY:${n}\r\nLOCATION:${loc}\r\nURL:${url}\r\nDESCRIPTION:Directions: ${url}\r\n${alarms(n)}END:VEVENT\r\n`;
  const ics="BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Wedding//EN\r\n"+
-  ev("muhurtham","20270120T003000Z","20270120T020000Z","Deepak Krishna B & Nivedha K S – Muhurtham","Arulmigu Kalyana Sundareswarar Mandapam\\, Annamalaiyar Kovil\\, Tiruvannamalai")+
-  ev("reception","20270120T050000Z","20270120T070000Z","Deepak Krishna B & Nivedha K S – Wedding Reception","Shri Meenachi Marriage Hall\\, Tiruvannamalai")+"END:VCALENDAR";
+  ev("muhurtham","20270120T003000Z","20270120T020000Z","Deepak Krishna B & Nivedha K S – Muhurtham","Arulmigu Kalyana Sundareswarar Mandapam\\, Annamalaiyar Kovil\\, Tiruvannamalai","https://maps.app.goo.gl/NtC6XFkxFkJ88YCD6")+
+  ev("reception","20270120T050000Z","20270120T070000Z","Deepak Krishna B & Nivedha K S – Wedding Reception","Shri Meenachi Marriage Hall\\, Tiruvannamalai","https://maps.app.goo.gl/jEvwz8jDo3x3Y1FN7")+"END:VCALENDAR";
  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));
  a.download="deepak-nivi-wedding.ics";document.body.appendChild(a);a.click();a.remove()};
 </script>
