@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="intro-lock">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Wedding invitation for Deepak Krishna B & Nivedha K S – Wednesday, 20 January 2027, Tiruvannamalai.">
+<meta name="description" content="Wedding invitation for Deepak Krishna B &amp; Nivedha K S – Wednesday, 20 January 2027, Tiruvannamalai.">
 <meta name="theme-color" content="#800000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Deepak Krishna B &amp; Nivedha K S – Wedding Invitation">
+<meta property="og:description" content="With the blessings of the Almighty and our elders, we joyfully invite you to our wedding on Wednesday, 20 January 2027 in Tiruvannamalai.">
+<meta property="og:image" content="https://dn-wedding-invitation.vercel.app/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://dn-wedding-invitation.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/logo.webp">
+<noscript><style>#intro{display:none!important}html.intro-lock{overflow:auto!important}</style></noscript>
 <title>Deepak Krishna B &amp; Nivedha K S – Wedding Invitation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Playfair+Display:wght@400;600&family=Noto+Serif+Tamil:wght@400;600;700&family=Arima+Madurai:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--maroon:#800000;--gold:#FFD700;--white:#fff;--script:'Great Vibes','Noto Serif Tamil',cursive;--serif:'Cormorant Garamond','Playfair Display','Noto Serif Tamil',serif;--script-ta:'Arima Madurai','Noto Serif Tamil',cursive}
+:root{--safe:clamp(70px,22vw,110px);--maroon:#800000;--gold:#FFD700;--white:#fff;--script:'Great Vibes','Noto Serif Tamil',cursive;--serif:'Cormorant Garamond','Playfair Display','Noto Serif Tamil',serif;--script-ta:'Arima Madurai','Noto Serif Tamil',cursive}
 *{box-sizing:border-box;margin:0}
-html,body{overflow-x:hidden}
+html{overflow-x:hidden}
+body{overflow-x:clip}
 html{scrollbar-gutter:stable}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+#startLogo,.badge{height:auto}
 body{background:var(--maroon);color:var(--white);font-family:var(--serif);text-align:center;line-height:1.7;letter-spacing:.02em;font-size:clamp(16px,2.3vw,19px)}
 body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.08;
-background-image:url("assets/Chikku kollam.png");background-repeat:repeat;background-size:150px;background-position:center}
+background-image:url("assets/chikku-kollam.webp");background-repeat:repeat;background-size:150px;background-position:center}
 @media (min-width:700px){body::before{background-size:210px}}
 @media (min-width:1100px){body::before{background-size:270px}}
 /* fades scrolling content out smoothly, starting well ahead of where the thali is locked at the very top; only shown once the thali is actually locked */
@@ -24,8 +39,9 @@ background-image:url("assets/Chikku kollam.png");background-repeat:repeat;backgr
 background:linear-gradient(to bottom, var(--maroon) 0%, var(--maroon) 18%, rgba(128,0,0,.85) 40%, rgba(128,0,0,0) 100%)}
 .top-fade.show{opacity:1}
 h1,h2,h3,p{overflow-wrap:break-word;word-break:break-word}
+h1,h2,h3,p,footer,.hero-names{text-wrap:balance}
 main,.bar{position:relative;z-index:1}
-.bar{position:fixed;top:0;left:0;right:0;display:flex;justify-content:flex-end;gap:10px;padding:calc(env(safe-area-inset-top,0px) + 10px) 12px 10px;z-index:50;pointer-events:none}
+.bar{position:fixed;top:0;left:0;right:0;display:flex;justify-content:flex-end;gap:8px;padding:calc(env(safe-area-inset-top,0px) + 8px) calc(env(safe-area-inset-right,0px) + 10px) 8px 12px;z-index:50;pointer-events:none}
 .bar button{pointer-events:auto;background:rgba(128,0,0,.8);color:var(--gold);border:1px solid var(--gold);border-radius:20px;padding:6px 14px;font:600 14px var(--serif);cursor:pointer}
 .gold{color:var(--gold)}
 /* banana tree side art, big and pinned exactly at the bottom corners for the whole page, flush with no gap */
@@ -46,23 +62,23 @@ main,.bar{position:relative;z-index:1}
 /* bottom progress timeline: shows which part of the invitation the visitor is on, themed with the maroon/gold palette. Plain small round dots, no numbers/checkmarks, sized so the active/done states never collide with the connecting lines */
 .progress-track{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);transform:translateX(-50%);
 display:flex;align-items:center;z-index:60;background:rgba(50,0,0,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
-border:1px solid rgba(255,215,0,.3);border-radius:30px;padding:9px 12px;box-shadow:0 4px 16px rgba(0,0,0,.45)}
-.progress-track .step{position:relative;flex:none;width:22px;height:22px;border-radius:50%;cursor:pointer;
+border:1px solid rgba(255,215,0,.3);border-radius:30px;padding:0 10px;box-shadow:0 4px 16px rgba(0,0,0,.45)}
+.progress-track .step{position:relative;flex:none;width:36px;height:44px;border-radius:50%;cursor:pointer;
 border:0;background:none;padding:0;display:flex;align-items:center;justify-content:center}
 .progress-track .step .indicator{width:8px;height:8px;border-radius:50%;background:rgba(255,215,0,.35);
 transition:background .35s ease,width .35s ease,height .35s ease,box-shadow .35s ease}
-.progress-track .line{flex:none;width:clamp(14px,4vw,26px);height:2px;background:rgba(255,215,0,.25);transition:background .35s ease}
+.progress-track .line{flex:none;width:clamp(8px,3vw,20px);height:2px;background:rgba(255,215,0,.25);transition:background .35s ease}
 .progress-track .step.active .indicator{width:11px;height:11px;background:var(--gold);box-shadow:0 0 0 3px rgba(255,215,0,.22)}
 .progress-track .step.done .indicator{background:rgba(255,215,0,.85)}
 .progress-track .line.done{background:var(--gold)}
-@media (max-width:360px){.progress-track{padding:7px 9px}.progress-track .step{width:18px;height:18px}.progress-track .step .indicator{width:7px;height:7px}.progress-track .step.active .indicator{width:9px;height:9px}.progress-track .line{width:clamp(10px,3.5vw,18px)}}
+@media (max-width:360px){.progress-track{padding:0 6px}.progress-track .step{width:34px}.progress-track .line{width:8px}}
 /* starting page: logo starts big & centered (fixed to the viewport), then animates (scrubbed to scroll) into a small top-left corner mark and stays docked there */
 #start{min-height:100svh;position:relative}
 #startLogo{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(240px,42vw,620px);aspect-ratio:1/1;
 opacity:1;z-index:6}
 /* badge sits below the logo medallion; its white backing is blended away so only the gold artwork shows */
-.badge{position:absolute;left:50%;top:calc(50% + clamp(140px,21vw,330px));transform:translateX(-50%);
-width:clamp(220px,30vw,420px);mix-blend-mode:multiply;z-index:1;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));pointer-events:none}
+.badge{position:fixed;left:50%;top:calc(50% + clamp(140px,21vw,330px));transform:translateX(-50%);
+width:clamp(220px,30vw,420px);mix-blend-mode:multiply;z-index:1;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
 /* hero */
 #hero{min-height:95svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding-top:60px}
 .hero-names{opacity:0;transform:scale(.6);font-family:var(--script);color:var(--gold);font-size:clamp(20px,8vw,64px);line-height:1.2;text-align:center;padding:0 16px;max-width:94vw}
@@ -72,7 +88,8 @@ width:clamp(220px,30vw,420px);mix-blend-mode:multiply;z-index:1;filter:drop-shad
 .hero-names.locked{position:fixed!important;margin:0;z-index:7;top:48vh;left:50%}
 /* Save the Date dissolves in from the background at a fixed spot below the names (no sliding up), then dissolves back out once the art takes over */
 #savedate{min-height:46svh;display:flex;align-items:center;justify-content:center}
-.savedate-overlay{opacity:0;text-align:center;padding:0 16px}
+.savedate-overlay{opacity:0;text-align:center;padding:0 var(--safe)}
+.savedate-overlay.locked p{pointer-events:auto}
 .savedate-overlay.locked{position:fixed!important;top:63vh;left:50%;transform:translateX(-50%);z-index:6;width:min(92vw,700px);pointer-events:none}
 /* the marriage date revealed big and sparkling above the Save the Date label */
 .sparkle-date{font-family:var(--script);font-size:clamp(26px,7.5vw,56px);line-height:1.15;margin-bottom:2px;
@@ -85,7 +102,10 @@ background:linear-gradient(100deg,var(--gold) 20%,#fff8dc 40%,#fff 50%,#fff8dc 6
 background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
 text-shadow:0 0 14px rgba(255,215,0,.5);animation:sparkleShine 3.2s linear infinite}
 @keyframes sparkleShine{0%{background-position:250% 0}100%{background-position:-250% 0}}
-body.ta .sparkle-date{font-family:var(--script-ta);font-weight:900}
+body.ta .sparkle-date{font-family:var(--script-ta);font-weight:900;font-size:clamp(20px,5.6vw,50px)}
+.savedate-overlay.locked{top:59vh}
+.savedate-overlay .small{white-space:normal}
+.savedate-overlay p[data-k="intro"]{font-size:clamp(15px,4.1vw,19px);line-height:1.65}
 body.ta .sparkle-weekday{font-family:var(--script-ta);font-weight:700}
 #thali{width:clamp(240px,26vw,460px);filter:drop-shadow(0 8px 20px rgba(0,0,0,.5))}
 /* locked: the tail (coins + pendant + bead row) settles and stays pinned at the very top for the rest of the page */
@@ -93,23 +113,28 @@ body.ta .sparkle-weekday{font-family:var(--script-ta);font-weight:700}
 filter:drop-shadow(0 6px 14px rgba(0,0,0,.5))}
 #thali.locked img{position:absolute;bottom:0;left:50%;transform:translateX(-50%)}
 section{padding:60px 20px;max-width:760px;margin:0 auto}
+/* the details page scrolls over the pinned thali, so its text and cards must be opaque enough to stay readable on top of it */
+#details{position:relative;z-index:10}
+footer{text-shadow:0 0 6px var(--maroon),0 0 12px var(--maroon)}
+#details .small{display:inline-block;max-width:100%;white-space:nowrap;letter-spacing:1.5px;font-size:clamp(11px,3.3vw,20px);background:rgba(48,0,0,.96);border-radius:20px;padding:4px 14px}
+body.ta #details .small{letter-spacing:0}
 .script{font-family:var(--script);color:var(--gold);font-size:clamp(28px,8vw,104px);line-height:1.15;white-space:nowrap;text-align:center}
 .small{letter-spacing:3px;text-transform:uppercase;font-size:clamp(13px,2.9vw,20px);color:var(--gold);white-space:nowrap;text-align:center;display:block}
 /* the Ghibli-style couple art sits above the fixed hero names when they overlap while scrolling past */
-#art{width:clamp(240px,34vw,480px);min-height:240px;margin:0 auto;display:flex;align-items:center;justify-content:center;position:relative;z-index:9}
-#art img{max-width:100%}
+#art{width:min(100%,clamp(240px,34vw,480px));min-height:240px;margin:0 auto;display:flex;align-items:center;justify-content:center;position:relative;z-index:9}
+#art img{width:100%;height:auto;aspect-ratio:373/669;display:block}
 .ph{border:2px dashed var(--gold);border-radius:16px;padding:40px 16px;color:var(--gold);font-size:14px;opacity:.8;width:100%}
-.card{border:1px solid var(--gold);border-radius:16px;padding:22px 16px;margin:18px 0;background:rgba(0,0,0,.18);font-size:clamp(16px,2.6vw,20px)}
-.card h3{font-family:var(--script);color:var(--gold);font-size:clamp(20px,6vw,42px);font-weight:400;white-space:nowrap;text-align:center}
-.pin{display:inline-flex;align-items:center;gap:8px;margin-top:10px;color:var(--gold);text-decoration:none;border:1px solid var(--gold);border-radius:24px;padding:8px 18px;font-weight:700;font-size:clamp(14px,2.2vw,17px)}
+.card{border:1px solid var(--gold);border-radius:16px;padding:22px 16px;margin:20px 0;background:rgba(48,0,0,.96);font-size:clamp(16px,2.6vw,20px)}
+.card h3{font-family:var(--script);color:var(--gold);font-size:clamp(20px,6vw,42px);font-weight:400;text-align:center}
+.pin{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;min-width:168px;margin-top:10px;color:var(--gold);text-decoration:none;border:1px solid var(--gold);border-radius:24px;padding:8px 18px;font-weight:700;font-size:clamp(14px,2.2vw,17px)}
 .pin svg{width:18px;height:18px;fill:var(--gold)}
-#cd{display:flex;justify-content:center;gap:clamp(8px,1vw,16px);margin:22px 0;flex-wrap:wrap}
-#cd div{min-width:clamp(60px,7vw,90px);border:1px solid var(--gold);border-radius:12px;padding:10px 4px}
-#cd b{display:block;font-size:clamp(24px,3vw,36px);color:var(--gold)}
-#cd span{font-size:clamp(11px,1.8vw,13px);letter-spacing:1px;text-transform:uppercase}
-.btn{background:var(--gold);color:var(--maroon);border:0;border-radius:30px;padding:13px clamp(26px,3vw,42px);font:700 clamp(16px,2.2vw,20px) var(--serif);cursor:pointer;margin-top:14px}
+#cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));justify-content:center;gap:clamp(5px,1.6vw,16px);margin:20px auto;max-width:420px}
+#cd div{min-width:0;border:1px solid var(--gold);border-radius:12px;padding:10px 2px;background:rgba(48,0,0,.96)}
+#cd b{display:block;font-size:clamp(20px,6.4vw,36px);line-height:1.2;color:var(--gold);font-variant-numeric:tabular-nums}
+#cd span{display:block;font-size:clamp(9px,2.7vw,13px);letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
+.btn{background:var(--gold);color:var(--maroon);border:0;border-radius:30px;min-height:48px;padding:13px clamp(26px,3vw,42px);font:700 clamp(16px,2.2vw,20px) var(--serif);cursor:pointer;margin-top:14px}
 /* footer gets extra bottom padding so the fixed progress bar never covers its text */
-footer{padding:30px 20px calc(env(safe-area-inset-bottom,0px) + 100px);font-size:clamp(15px,2.4vw,18px);color:var(--gold)}
+footer{position:relative;z-index:10;padding:30px 20px 20px;font-size:clamp(15px,2.4vw,18px);color:var(--gold)}
 body.ta{line-height:1.9}
 body.ta .small{letter-spacing:0;font-family:var(--script-ta);font-weight:700}
 body.ta .script{font-family:var(--script-ta);font-weight:900;font-size:clamp(30px,6.5vw,78px);line-height:1.35}
@@ -118,49 +143,233 @@ body.ta .btn{font-family:var(--script-ta);font-weight:700}
 body.ta p,body.ta footer,body.ta #cd span{font-family:'Noto Serif Tamil',serif}
 @media (max-width:400px){
  section{padding:50px 14px}
- #cd{gap:6px}
- #cd div{min-width:54px;padding:8px 2px}
- #cd b{font-size:21px}
  .card{padding:18px 12px}
 }
-#mute{padding:0!important;width:clamp(32px,6vw,40px);height:clamp(32px,6vw,40px);border-radius:50%;display:flex;align-items:center;justify-content:center}
+@media (max-width:600px){
+ main{padding-left:clamp(30px,9vw,48px)!important;padding-right:clamp(30px,9vw,48px)!important}
+ #details{padding-top:20px}
+ #details .btn{margin:6px 0 4px}
+}
+#details .small+.btn{display:inline-block;margin-top:10px}
+ footer{padding-left:calc(var(--safe) - clamp(30px,9vw,48px));padding-right:calc(var(--safe) - clamp(30px,9vw,48px))}
+#mute{padding:0!important;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 #mute svg{width:60%;height:60%;fill:var(--gold);filter:drop-shadow(0 0 3px rgba(255,215,0,.5))}
 #mute #muteOffIcon{display:none}
 #mute.muted #muteOnIcon{display:none}
 #mute.muted #muteOffIcon{display:block;fill:#d8a6a6}
-#lang{padding:0!important;width:clamp(32px,6vw,40px);height:clamp(32px,6vw,40px);border-radius:50%;display:flex;align-items:center;justify-content:center}
+#lang{padding:0!important;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 #lang svg{width:60%;height:60%;fill:var(--gold);filter:drop-shadow(0 0 3px rgba(255,215,0,.5))}
+
+/* invocation shown while only the thali is on screen, fades out as the names appear */
+.invocation{position:fixed;left:0;right:0;top:74vh;z-index:6;pointer-events:none;opacity:0;visibility:hidden;text-align:center;padding:0 var(--safe)}
+.invocation p{pointer-events:auto}
+.inv-main{font-family:var(--script);font-size:clamp(24px,7vw,46px);line-height:1.25;color:var(--gold);text-shadow:0 0 16px rgba(255,215,0,.45)}
+body.ta .inv-main{font-size:clamp(18px,5vw,32px);line-height:1.5}
+body.ta .inv-main{font-family:var(--script-ta);font-weight:700}
+/* ---------- motion & interaction ---------- */
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:40;pointer-events:none}
+.scroll-hint{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 76px);transform:translateX(-50%);z-index:45;pointer-events:none;color:var(--gold);transition:opacity .4s ease}
+.scroll-hint.hide{opacity:0}
+.scroll-hint svg{display:block;width:28px;height:28px;fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.card,.pin,.btn,#art img{-webkit-user-select:none;user-select:none}
+.card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.pin,.btn{transition:transform .15s ease,background .2s ease,box-shadow .2s ease}
+#cd div{transition:transform .2s ease,box-shadow .3s ease}
+#art{cursor:pointer;-webkit-tap-highlight-color:transparent}
+@media (prefers-reduced-motion:no-preference){
+ .side-tree,.corner-flower{will-change:rotate}
+ .side-tree{transform-origin:50% 100%;animation:swayTree 6s ease-in-out infinite}
+ .side-tree.right{animation-delay:-2.5s;animation-duration:7s}
+ .corner-flower{transform-origin:50% 0;animation:swayFlower 4.5s ease-in-out infinite}
+ .corner-flower.right{animation-delay:-2s;animation-duration:5.5s}
+ #startLogo{animation:logoGlow 3.6s ease-in-out infinite}
+ .badge{animation:badgeGlow 3s ease-in-out infinite}
+ #art img{animation:floatArt 5s ease-in-out infinite}
+ .btn{animation:btnPulse 2.6s ease-in-out infinite}
+ .pin svg{animation:navNudge 1.8s ease-in-out infinite}
+ .scroll-hint svg{animation:hintBounce 1.4s ease-in-out infinite}
+ #cd div{animation:cdGlow 3.2s ease-in-out infinite}
+ #cd div:nth-child(2){animation-delay:.4s}#cd div:nth-child(3){animation-delay:.8s}#cd div:nth-child(4){animation-delay:1.2s}
+}
+@keyframes swayTree{0%,100%{rotate:-1.6deg}50%{rotate:1.6deg}}
+@keyframes swayFlower{0%,100%{rotate:-2.5deg}50%{rotate:2.5deg}}
+@keyframes logoGlow{0%,100%{filter:drop-shadow(0 0 4px rgba(255,215,0,.15))}50%{filter:drop-shadow(0 0 16px rgba(255,215,0,.55))}}
+@keyframes badgeGlow{0%,100%{filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}50%{filter:drop-shadow(0 0 14px rgba(255,215,0,.5))}}
+@keyframes floatArt{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,215,0,.5)}60%{box-shadow:0 0 0 12px rgba(255,215,0,0)}}
+@keyframes navNudge{0%,100%{transform:translate(0,0)}50%{transform:translate(2px,-2px)}}
+@keyframes hintBounce{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(8px);opacity:1}}
+@keyframes cdGlow{0%,100%{box-shadow:0 0 0 rgba(255,215,0,0)}50%{box-shadow:0 0 12px rgba(255,215,0,.3)}}
+/* ---------- hover (mouse) & press (finger) effects on every element; individual transform properties so they never fight GSAP ---------- */
+.sparkle-date,.sparkle-weekday,.savedate-overlay .small,.savedate-overlay p[data-k="intro"],.hero-names span[data-k],.hero-names .amp,.badge,.card h3,.card p,.cd-title,.inv-main,#details .small,footer,#thali img,#startLogo,.bar button,#cal,.pin,.card,#cd div,#art img{transition:scale .28s cubic-bezier(.3,1.5,.5,1),rotate .28s cubic-bezier(.3,1.5,.5,1),translate .28s ease,color .25s ease,background .25s ease,text-shadow .25s ease,box-shadow .25s ease,border-color .25s ease,filter .3s ease}
+#thali img{transform-origin:50% 0}
+.cd-title{font-family:var(--script);color:var(--gold);font-size:clamp(22px,6.4vw,34px);line-height:1.2;margin:22px 0 0;text-align:center}
+body.ta .cd-title{font-family:var(--script-ta);font-weight:700;font-size:clamp(18px,5vw,28px)}
+.progress-track .step .indicator{transition:background .35s ease,width .35s ease,height .35s ease,box-shadow .35s ease,scale .25s ease}
+.pin:hover svg,.pin:active svg{fill:var(--maroon)}
+.pin svg{transition:fill .2s ease}
+@media (hover:hover){
+.sparkle-date:hover{scale:1.07!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+.sparkle-weekday:hover{scale:1.12!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+.savedate-overlay .small:hover{scale:1.08!important;text-shadow:0 0 14px rgba(255,215,0,.85)}
+.savedate-overlay p[data-k="intro"]:hover{scale:1.04!important;color:#fff3b0;text-shadow:0 0 14px rgba(255,215,0,.6)}
+.hero-names span[data-k]:hover{scale:1.08!important;text-shadow:0 0 18px rgba(255,215,0,.9)}
+.hero-names .amp:hover{scale:1.3!important;text-shadow:0 0 16px rgba(255,215,0,.9)}
+#thali img:hover{scale:1.04!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+#startLogo:hover{scale:1.08!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+.badge:hover{scale:1.06!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+#art img:hover{scale:1.05!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+#details .small:hover{scale:1.06!important;background:rgba(80,0,0,.98);box-shadow:0 0 16px rgba(255,215,0,.5)}
+.card:hover{scale:1.02!important;box-shadow:0 0 22px rgba(255,215,0,.4)!important;border-color:#fff3b0}
+.card h3:hover{scale:1.1!important;text-shadow:0 0 14px rgba(255,215,0,.8)}
+.card p:hover{color:#fff3b0;scale:1.03!important;text-shadow:0 0 10px rgba(255,215,0,.5)}
+.pin:hover{background:var(--gold);color:var(--maroon);scale:1.06!important;box-shadow:0 0 18px rgba(255,215,0,.7)}
+.btn:hover{scale:1.07!important;background:#fff3b0;box-shadow:0 0 22px rgba(255,215,0,.8)!important}
+.cd-title:hover{scale:1.06!important;text-shadow:0 0 14px rgba(255,215,0,.8)}
+#cd div:hover{scale:1.08!important;border-color:#fff;box-shadow:0 0 18px rgba(255,215,0,.65)!important}
+footer:hover{scale:1.04!important;text-shadow:0 0 14px rgba(255,215,0,.7)}
+.bar button:hover{scale:1.12!important;background:rgba(255,215,0,.3);box-shadow:0 0 14px rgba(255,215,0,.7)}
+.progress-track .step:hover .indicator{scale:1.8!important;box-shadow:0 0 8px rgba(255,215,0,.9)}
+.inv-main:hover{scale:1.05!important;text-shadow:0 0 18px rgba(255,215,0,.9)}
+}
+.sparkle-date:active{scale:1.07!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+.sparkle-weekday:active{scale:1.12!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+.savedate-overlay .small:active{scale:1.08!important;text-shadow:0 0 14px rgba(255,215,0,.85)}
+.savedate-overlay p[data-k="intro"]:active{scale:1.04!important;color:#fff3b0;text-shadow:0 0 14px rgba(255,215,0,.6)}
+.hero-names span[data-k]:active{scale:1.08!important;text-shadow:0 0 18px rgba(255,215,0,.9)}
+.hero-names .amp:active{scale:1.3!important;text-shadow:0 0 16px rgba(255,215,0,.9)}
+#thali img:active{scale:1.04!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+#startLogo:active{scale:1.08!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+.badge:active{scale:1.06!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+#art img:active{scale:1.05!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
+#details .small:active{scale:1.06!important;background:rgba(80,0,0,.98);box-shadow:0 0 16px rgba(255,215,0,.5)}
+.card:active{scale:1.02!important;box-shadow:0 0 22px rgba(255,215,0,.4)!important;border-color:#fff3b0}
+.card h3:active{scale:1.1!important;text-shadow:0 0 14px rgba(255,215,0,.8)}
+.card p:active{color:#fff3b0;scale:1.03!important;text-shadow:0 0 10px rgba(255,215,0,.5)}
+.pin:active{background:var(--gold);color:var(--maroon);scale:1.06!important;box-shadow:0 0 18px rgba(255,215,0,.7)}
+.btn:active{scale:1.07!important;background:#fff3b0;box-shadow:0 0 22px rgba(255,215,0,.8)!important}
+.cd-title:active{scale:1.06!important;text-shadow:0 0 14px rgba(255,215,0,.8)}
+#cd div:active{scale:1.08!important;border-color:#fff;box-shadow:0 0 18px rgba(255,215,0,.65)!important}
+footer:active{scale:1.04!important;text-shadow:0 0 14px rgba(255,215,0,.7)}
+.bar button:active{scale:1.12!important;background:rgba(255,215,0,.3);box-shadow:0 0 14px rgba(255,215,0,.7)}
+.progress-track .step:active .indicator{scale:1.8!important;box-shadow:0 0 8px rgba(255,215,0,.9)}
+.inv-main:active{scale:1.05!important;text-shadow:0 0 18px rgba(255,215,0,.9)}
+.pin:active,.btn:active,#cd div:active{scale:.95!important}
+.card:active{scale:.985!important}
+/* ---------- travel tips (collapsed until tapped) ---------- */
+#travel{position:relative;z-index:10;padding:10px 20px calc(env(safe-area-inset-bottom,0px) + 110px)}
+.travel-toggle{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:10px 22px;border:1px solid var(--gold);border-radius:30px;background:rgba(48,0,0,.96);color:var(--gold);font:700 clamp(15px,4vw,18px) var(--serif);cursor:pointer;
+ transition:scale .28s cubic-bezier(.3,1.5,.5,1),box-shadow .25s ease,background .25s ease}
+.travel-toggle{scroll-margin-top:90px}
+.travel-toggle svg{width:20px;height:20px;fill:var(--gold);flex:none}
+.travel-toggle .chev{width:24px;height:24px;transition:transform .35s ease}
+.travel-toggle[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.travel-toggle:active{scale:.95!important}
+@media (hover:hover){.travel-toggle:hover{scale:1.06!important;box-shadow:0 0 18px rgba(255,215,0,.7)!important;background:rgba(80,0,0,.98)}}
+.travel-toggle:active{box-shadow:0 0 18px rgba(255,215,0,.7)}
+.travel-panel{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .45s ease,visibility 0s .45s}
+.travel-panel.open{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .45s ease,visibility 0s}
+.travel-inner{overflow:hidden;min-height:0}
+.travel-card{margin:16px 0 0;border:1px solid var(--gold);border-radius:16px;padding:20px 14px;background:rgba(48,0,0,.96);text-align:center}
+.travel-card h4{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0 8px;font:400 clamp(20px,5.6vw,30px) var(--script);color:var(--gold)}
+.travel-card h4:first-child{margin-top:0}
+.travel-card h4 svg{width:20px;height:20px;fill:var(--gold);flex:none}
+.t-list{list-style:none;padding:0;display:grid;gap:10px}
+.t-list li{display:flex;flex-direction:column;gap:2px;padding:8px 6px;border-radius:12px;transition:scale .25s cubic-bezier(.3,1.5,.5,1),background .25s ease,box-shadow .25s ease}
+.t-list b{color:#fff3b0;font-weight:700;font-size:clamp(15px,4vw,18px)}
+.t-list span{font-size:clamp(14px,3.7vw,17px);line-height:1.5}
+.t-list li.rec{border:1px solid rgba(255,215,0,.55);background:rgba(255,215,0,.07)}
+.t-tag{align-self:center;font-style:normal;font-weight:700;font-size:12px;letter-spacing:.04em;padding:2px 10px;margin-bottom:2px;border-radius:20px;background:var(--gold);color:var(--maroon)}
+body.ta .t-tag{font-family:var(--script-ta);letter-spacing:0}
+.t-fine{font-size:13px;opacity:.75;margin-top:10px}
+.t-text{font-size:clamp(14px,3.8vw,17px);line-height:1.65}
+.t-note{margin-top:18px;padding:16px 12px;border:1px dashed var(--gold);border-radius:14px;background:rgba(255,215,0,.08);transition:scale .25s cubic-bezier(.3,1.5,.5,1),box-shadow .25s ease}
+.t-note svg{width:24px;height:24px;fill:var(--gold);margin-bottom:4px}
+.t-note-title{font:400 clamp(20px,5.4vw,28px) var(--script);color:var(--gold);margin-bottom:4px}
+.t-note p:last-child{font-size:clamp(14px,3.8vw,17px);line-height:1.65}
+body.ta .travel-card h4,body.ta .t-note-title{font-family:var(--script-ta);font-weight:700;font-size:clamp(17px,4.6vw,24px)}
+body.ta .travel-toggle,body.ta .t-list b{font-family:var(--script-ta)}
+body.ta .t-list span,body.ta .t-text,body.ta .t-note p,body.ta .t-fine{font-family:'Noto Serif Tamil',serif;line-height:1.8}
+@media (hover:hover){.t-list li:hover{scale:1.03;background:rgba(255,215,0,.08);box-shadow:0 0 14px rgba(255,215,0,.35)}.t-note:hover{scale:1.02;box-shadow:0 0 18px rgba(255,215,0,.45)}}
+.t-list li:active{scale:1.03;background:rgba(255,215,0,.08);box-shadow:0 0 14px rgba(255,215,0,.35)}
+.t-note:active{scale:1.02;box-shadow:0 0 18px rgba(255,215,0,.45)}
+@media (max-width:600px){#travel{padding-left:12px;padding-right:12px}}
+.travel-toggle span{white-space:nowrap}
+/* ---------- opening page (tap the logo) + blurred loading screen ---------- */
+html.intro-lock,html.intro-lock body{overflow:hidden!important}
+#intro{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease}
+#intro.done{opacity:0;pointer-events:none}
+#intro.gone{display:none}
+.intro-blur{position:absolute;inset:0;background:rgba(90,0,0,.35);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.intro-solid{position:absolute;inset:0;background:var(--maroon);transition:opacity .5s ease}
+.intro-solid::before{content:"";position:absolute;inset:0;opacity:.09;background:url("assets/chikku-kollam.webp") center/150px repeat}
+#intro.loading .intro-solid{opacity:0}
+.intro-open{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:20px;padding:24px;text-align:center;transition:opacity .4s ease,scale .5s ease}
+#intro.loading .intro-open{opacity:0;scale:1.15;pointer-events:none}
+.intro-logo-btn{border:0;background:none;padding:0;border-radius:50%;cursor:pointer;line-height:0;transition:scale .28s cubic-bezier(.3,1.5,.5,1),filter .3s ease}
+.intro-logo-btn img{width:clamp(180px,56vw,300px);height:auto;aspect-ratio:1/1}
+.intro-logo-btn:focus-visible{outline:2px solid var(--gold);outline-offset:6px}
+.intro-sub{font-size:clamp(14px,4vw,18px);letter-spacing:.24em;text-transform:uppercase;color:#f3d9a4}
+body.ta .intro-sub{font-family:var(--script-ta);font-weight:700;letter-spacing:0;text-transform:none}
+.intro-spin{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s ease .15s}
+#intro.loading .intro-spin{opacity:1}
+.intro-spin img{width:clamp(80px,24vw,120px);height:auto;aspect-ratio:1/1;filter:drop-shadow(0 0 10px rgba(255,215,0,.5));animation:introSpin 6s linear infinite}
+@keyframes introSpin{to{rotate:360deg}}
+@keyframes introBreath{0%,100%{scale:1}50%{scale:1.04}}
+@keyframes introIn{from{opacity:0;translate:0 16px}to{opacity:1;translate:0 0}}
+.intro-open>*{animation:introIn .8s ease both}
+.intro-open>:nth-child(2){animation-delay:.25s}
+@media (prefers-reduced-motion:no-preference){.intro-logo-btn img{animation:logoGlow 3.6s ease-in-out infinite,introBreath 3.6s ease-in-out infinite}}
+@media (prefers-reduced-motion:reduce){.intro-spin img{animation-duration:12s}}
+@media (hover:hover){.intro-logo-btn:hover{scale:1.06;filter:drop-shadow(0 0 16px rgba(255,215,0,.85))}}
+.intro-logo-btn:active{scale:1.06;filter:drop-shadow(0 0 16px rgba(255,215,0,.85))}
 </style>
 </head>
 <body>
 
+<div id="intro" role="dialog" aria-modal="true" aria-label="Wedding invitation">
+  <div class="intro-blur"></div>
+  <div class="intro-solid"></div>
+  <div class="intro-open">
+    <button class="intro-logo-btn" id="introOpen" type="button" aria-label="Open the invitation"><img src="assets/logo.webp" alt="D &amp; N" width="500" height="500"></button>
+    <p class="intro-sub" data-k="iInv">You are invited</p>
+  </div>
+  <div class="intro-spin" role="status" aria-label="Loading"><img src="assets/chikku-kollam.webp" alt="" width="500" height="500"></div>
+</div>
+
 <div class="bar">
-  <button id="lang" aria-label="Language">
+  <button id="lang" type="button" aria-label="Switch to Tamil">
     <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
   </button>
-  <button id="mute" aria-label="Music">
+  <button id="mute" class="muted" type="button" aria-label="Play music" aria-pressed="false">
     <svg id="muteOnIcon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16.5 12A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4z"/><path d="M14 3.23v2.06c2.89 1.2 5 4.03 5 6.71s-2.11 5.51-5 6.71v2.06c4-1.25 6.5-5.06 6.5-8.77s-2.5-7.52-6.5-8.77z"/></svg>
     <svg id="muteOffIcon" viewBox="0 0 24 24"><path d="M12 4 9.91 6.09 12 8.18V4z"/><path d="M4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21 21 19.73 4.27 3z"/><path d="M19 12c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.9 8.9 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z"/><path d="M16.5 12c0-1.77-1-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63z"/></svg>
   </button>
 </div>
 
 <div class="top-fade" id="topFade" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="scroll-hint" id="scrollHint" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 8l6 6 6-6"/><path d="M6 14l6 6 6-6"/></svg></div>
 
-<img src="assets/logo.png" alt="D &amp; N" id="startLogo">
+<img src="assets/logo.webp" alt="D &amp; N" id="startLogo" width="500" height="500" fetchpriority="high" decoding="async">
 
-<img src="assets/left bannana tree.png" alt="" class="side-tree left" aria-hidden="true">
-<img src="assets/right bannana tree.png" alt="" class="side-tree right" aria-hidden="true">
-<img src="assets/flowers.png" alt="" class="corner-flower left" aria-hidden="true">
-<img src="assets/flowers.png" alt="" class="corner-flower right" aria-hidden="true">
+<img src="assets/left-banana-tree.webp" alt="" class="side-tree left" aria-hidden="true" width="432" height="578" decoding="async">
+<img src="assets/right-banana-tree.webp" alt="" class="side-tree right" aria-hidden="true" width="432" height="578" decoding="async">
+<img src="assets/flowers.webp" alt="" class="corner-flower left" aria-hidden="true" width="249" height="1003" decoding="async">
+<img src="assets/flowers.webp" alt="" class="corner-flower right" aria-hidden="true" width="249" height="1003" decoding="async">
+
+<div class="invocation" id="invocation" aria-hidden="true">
+  <p class="inv-main" data-k="inv1">You are invited to our special day!</p>
+</div>
 
 <main>
   <section id="start">
-    <img src="assets/badge.png" alt="Wedding Invitation" class="badge">
+    <img src="assets/badge.webp" alt="Wedding Invitation" class="badge" width="869" height="287" decoding="async">
   </section>
 
   <div id="hero">
     <div id="thali">
-      <img src="assets/Thalli.png" alt="Golden Thali" style="width:100%" id="thaliImg" decoding="async">
+      <img src="assets/Thalli.webp" alt="Golden Thali" style="width:100%;height:auto" id="thaliImg" width="373" height="669" decoding="async">
     </div>
     <div class="hero-names" id="heroNames"><span data-k="groom">Deepak Krishna B</span><span class="amp">&amp;</span><span data-k="bride">Nivedha K S</span></div>
   </div>
@@ -170,62 +379,94 @@ body.ta p,body.ta footer,body.ta #cd span{font-family:'Noto Serif Tamil',serif}
       <p class="sparkle-date" data-k="datebig">20 January 2027</p>
       <p class="sparkle-weekday" data-k="weekday">Wednesday</p>
       <p class="small" data-k="save">Save the Date</p>
-      <p data-k="intro" style="margin:14px 0 18px">With the blessings of the Almighty and our elders, we joyfully invite you to bless the wedding of</p>
+      <p data-k="intro" style="margin:14px 0 18px">With the blessings of the Almighty and our elders, we joyfully invite you to our wedding.</p>
     </div>
   </section>
 
   <section id="artSection">
-    <div id="art"><img src="assets/couple.png" alt="Deepak Krishna B and Nivedha K S" id="coupleImg" loading="lazy" decoding="async"></div>
+    <div id="art"><img src="assets/couple.webp" alt="Deepak Krishna B and Nivedha K S" id="coupleImg" width="373" height="669" decoding="async"></div>
   </section>
 
   <section id="details">
     <p class="small" data-k="date">Wednesday, 20 January 2027</p>
+    <button class="btn" id="cal" type="button" data-k="cal">Add to Calendar</button>
     <div class="card rv">
       <h3 data-k="e1">Muhurtham</h3>
       <p data-k="t1">6:00 AM – 7:30 AM</p>
-      <p data-k="v1">Arulmigu Kallyana Sunderservarar Mandabam,<br>Annamalaiyar Kovil, Tiruvannamalai</p>
-      <a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Arulmigu+Kalyana+Sundareswarar+Mandapam+Annamalaiyar+Temple+Tiruvannamalai">
-        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z"/></svg><span data-k="map">View Venue</span></a>
+      <p data-k="v1">Arulmigu Kalyana Sundareswarar Mandapam,<br>Annamalaiyar Kovil, Tiruvannamalai</p>
+      <a class="pin" target="_blank" rel="noopener" href="https://maps.app.goo.gl/NtC6XFkxFkJ88YCD6">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4.5 20.3l.7.7L12 18l6.800 3 .7-.7z"/></svg><span data-k="map">Navigate</span></a>
     </div>
     <div class="card rv">
       <h3 data-k="e2">Wedding Reception</h3>
       <p data-k="t2">10:30 AM</p>
       <p data-k="v2">Shri Meenachi Marriage Hall,<br>Tiruvannamalai</p>
-      <a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shri+Meenachi+Marriage+Hall+Tiruvannamalai">
-        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z"/></svg><span data-k="map2">View Venue</span></a>
+      <a class="pin" target="_blank" rel="noopener" href="https://maps.app.goo.gl/jEvwz8jDo3x3Y1FN7">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4.5 20.3l.7.7L12 18l6.800 3 .7-.7z"/></svg><span data-k="map2">Navigate</span></a>
     </div>
 
+    <p class="cd-title" data-k="cdt">Countdown to the wedding</p>
     <div id="cd">
       <div><b id="d">00</b><span data-k="cd">Days</span></div>
       <div><b id="h">00</b><span data-k="ch">Hours</span></div>
       <div><b id="m">00</b><span data-k="cm">Minutes</span></div>
       <div><b id="s">00</b><span data-k="cs">Seconds</span></div>
     </div>
-    <button class="btn" id="cal" data-k="cal">Add to Calendar</button>
   </section>
 
   <footer data-k="close">Your presence and blessings will make our day complete.</footer>
+
+  <section id="travel">
+    <button class="travel-toggle" id="travelToggle" type="button" aria-expanded="false" aria-controls="travelPanel">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg><span data-k="tt">Travel Tips</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+    </button>
+    <div class="travel-panel" id="travelPanel" role="region" aria-labelledby="travelToggle">
+      <div class="travel-inner"><div class="travel-card">
+        <h4><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg><span data-k="tAir">Nearest airports</span></h4>
+        <ul class="t-list">
+          <li class="rec"><em class="t-tag" data-k="tPick">★ Our pick</em><b data-k="tA1">Chennai International (MAA)</b><span data-k="tA1d">≈ 175 km · about 3½ hrs by road · most flight options</span></li>
+          <li><b data-k="tA2">Puducherry (PNY)</b><span data-k="tA2d">≈ 100 km · limited flights</span></li>
+          <li><b data-k="tA3">Bengaluru International (BLR)</b><span data-k="tA3d">≈ 230 km · about 5 hrs by road</span></li>
+        </ul>
+        <h4><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5V21h2.23l2-2H14l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-6H6V6h5v5zm5.5 6c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6h-5V6h5v5z"/></svg><span data-k="tRail">Nearest railway stations</span></h4>
+        <ul class="t-list">
+          <li class="rec"><em class="t-tag" data-k="tPick">★ Our pick</em><b data-k="tR3">Katpadi Jn (KPD)</b><span data-k="tR3d">≈ 100 km from Tiruvannamalai · about 2–2½ hrs by road · major junction with trains from Chennai, Bengaluru and beyond</span></li>
+          <li><b data-k="tR2">Villupuram Jn (VM)</b><span data-k="tR2d">≈ 65 km from Tiruvannamalai · about 1½–2 hrs by road · good connections from Chennai and the south</span></li>
+          <li><b data-k="tR1">Tiruvannamalai (TNM)</b><span data-k="tR1d">In the town · ≈ 2 km from the temple · about 10 min by auto or car</span></li>
+        </ul>
+        <p class="t-fine" data-k="tFine">Distances are approximate road distances.</p>
+        <h4><span data-k="tGood">Good to know</span></h4>
+        <p class="t-text" data-k="tG1">The Muhurtham begins at 6:00 AM, so we suggest reaching Tiruvannamalai the evening before. Buses and taxis run regularly from Chennai, Villupuram and Vellore.</p>
+        <div class="t-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <p class="t-note-title" data-k="tNoteT">A small request from us</p>
+          <p data-k="tNote">Please book your train and flight tickets as early as you can. You'll get better fares and an easier confirmation, and we'll have the joy of seeing you with us on our special day.</p>
+        </div>
+      </div></div>
+    </div>
+  </section>
 </main>
 
-<nav class="progress-track" id="progressTrack" aria-label="Page progress">
-  <button class="step" type="button" data-target="#start" aria-label="Welcome"><span class="indicator"></span></button>
-  <span class="line"></span>
-  <button class="step" type="button" data-target="#savedate" aria-label="Save the Date"><span class="indicator"></span></button>
-  <span class="line"></span>
-  <button class="step" type="button" data-target="#artSection" aria-label="Our Story"><span class="indicator"></span></button>
-  <span class="line"></span>
-  <button class="step" type="button" data-target="#details" aria-label="Details"><span class="indicator"></span></button>
+<nav class="progress-track" id="progressTrack" aria-label="Jump to section">
+  <button class="step" type="button" data-target="#start" aria-label="Welcome"><span class="indicator" aria-hidden="true"></span></button>
+  <span class="line" aria-hidden="true"></span>
+  <button class="step" type="button" data-target="#savedate" aria-label="Save the Date"><span class="indicator" aria-hidden="true"></span></button>
+  <span class="line" aria-hidden="true"></span>
+  <button class="step" type="button" data-target="#artSection" aria-label="Our Story"><span class="indicator" aria-hidden="true"></span></button>
+  <span class="line" aria-hidden="true"></span>
+  <button class="step" type="button" data-target="#details" aria-label="Details"><span class="indicator" aria-hidden="true"></span></button>
 </nav>
 
-<audio id="bgm" loop preload="auto" src="assets/music.mp3"></audio>
+<audio id="bgm" loop preload="none" src="assets/music.mp3"></audio>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 const $=id=>document.getElementById(id);
+const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
 /* ---------- language ---------- */
 const T={
-en:{save:"Save the Date",intro:"With the blessings of the Almighty and our elders, we joyfully invite you to bless the wedding of",groom:"Deepak Krishna B",bride:"Nivedha K S",date:"Wednesday, 20 January 2027",weekday:"Wednesday",datebig:"20 January 2027",e1:"Muhurtham",t1:"6:00 AM – 7:30 AM",v1:"Arulmigu Kallyana Sunderservarar Mandabam,<br>Annamalaiyar Kovil, Tiruvannamalai",e2:"Wedding Reception",t2:"10:30 AM",v2:"Shri Meenachi Marriage Hall,<br>Tiruvannamalai",map:"View Venue",map2:"View Venue",cd:"Days",ch:"Hours",cm:"Minutes",cs:"Seconds",cal:"Add to Calendar",close:"Your presence and blessings will make our day complete.",btn:"தமிழ்"},
-ta:{save:"தேதியைக் குறித்துக் கொள்ளுங்கள்",intro:"இறைவனின் அருளாலும் பெரியோர்களின் ஆசியாலும், எங்கள் திருமண விழாவில் கலந்து வாழ்த்த அன்புடன் அழைக்கிறோம்",groom:"தீபக் கிருஷ்ணா பி",bride:"நிவேதா கே எஸ்",date:"புதன்கிழமை, 20 ஜனவரி 2027",weekday:"புதன்கிழமை",datebig:"20 ஜனவரி 2027",e1:"முகூர்த்தம்",t1:"காலை 6:00 – 7:30",v1:"அருள்மிகு கல்யாண சுந்தரேஸ்வரர் மண்டபம்,<br>அண்ணாமலையார் கோவில், திருவண்ணாமலை",e2:"திருமண வரவேற்பு",t2:"காலை 10:30",v2:"ஸ்ரீ மீனாட்சி திருமண மண்டபம்,<br>திருவண்ணாமலை",map:"இடத்தைப் பார்க்க",map2:"இடத்தைப் பார்க்க",cd:"நாட்கள்",ch:"மணி",cm:"நிமிடம்",cs:"வினாடி",cal:"நாட்காட்டியில் சேர்க்க",close:"தங்கள் வருகையும் ஆசியும் எங்கள் மகிழ்ச்சியை நிறைவு செய்யும்.",btn:"EN"}};
+en:{save:"Save the Date",intro:"With the blessings of the Almighty and our elders, we joyfully invite you to our wedding.",groom:"Deepak Krishna B",bride:"Nivedha K S",date:"Wednesday, 20 January 2027",weekday:"Wednesday",datebig:"20 January 2027",e1:"Muhurtham",t1:"6:00 AM – 7:30 AM",v1:"Arulmigu Kalyana Sundareswarar Mandapam,<br>Annamalaiyar Kovil, Tiruvannamalai",e2:"Wedding Reception",t2:"10:30 AM",v2:"Shri Meenachi Marriage Hall,<br>Tiruvannamalai",map:"Navigate",map2:"Navigate",cd:"Days",ch:"Hours",cm:"Minutes",cs:"Seconds",cal:"Add to Calendar",close:"Your presence and blessings will make our day complete.",cdt:"Countdown to the wedding",inv1:"You are invited to our special day!",tt:"Travel Tips",tAir:"Nearest airports",tA1:"Chennai International (MAA)",tA1d:"≈ 175 km from Tiruvannamalai · about 3½ hrs by road · most flight options",tA2:"Puducherry (PNY)",tA2d:"≈ 100 km from Tiruvannamalai · limited flights",tA3:"Bengaluru International (BLR)",tA3d:"≈ 230 km from Tiruvannamalai · about 5 hrs by road",tRail:"Nearest railway stations",tR1:"Tiruvannamalai (TNM)",tR1d:"In the town · ≈ 2 km from the temple · about 10 min by auto or car",tR2:"Villupuram Jn (VM)",tR2d:"≈ 65 km from Tiruvannamalai · about 1½–2 hrs by road · good connections from Chennai and the south",tR3:"Katpadi Jn (KPD)",tR3d:"≈ 100 km from Tiruvannamalai · about 2–2½ hrs by road · major junction with trains from Chennai, Bengaluru and beyond",tPick:"★ Our pick",tFine:"Distances are approximate road distances.",tGood:"Good to know",tG1:"The Muhurtham begins at 6:00 AM, so we suggest reaching Tiruvannamalai the evening before. Buses and taxis run regularly from Chennai, Villupuram and Vellore.",tNoteT:"A small request from us",tNote:"Please book your train and flight tickets as early as you can. You'll get better fares and an easier confirmation, and we'll have the joy of seeing you with us on our special day.",iInv:"You are invited",btn:"தமிழ்"},
+ta:{save:"தேதியைக் குறித்துக் கொள்ளுங்கள்",intro:"பெரியோர்களின் ஆசியுடன் எங்கள் திருமணத்திற்கு உங்களை அன்புடன் அழைக்கிறோம்.",groom:"தீபக் கிருஷ்ணா பி",bride:"நிவேதா கே எஸ்",date:"புதன்கிழமை, 20 ஜனவரி 2027",weekday:"புதன்கிழமை",datebig:"20 ஜனவரி 2027",e1:"முகூர்த்தம்",t1:"காலை 6:00 – 7:30",v1:"அருள்மிகு கல்யாண சுந்தரேஸ்வரர் மண்டபம்,<br>அண்ணாமலையார் கோவில், திருவண்ணாமலை",e2:"திருமண வரவேற்பு",t2:"காலை 10:30",v2:"ஸ்ரீ மீனாட்சி திருமண மண்டபம்,<br>திருவண்ணாமலை",map:"வழி காட்டு",map2:"வழி காட்டு",cd:"நாட்கள்",ch:"மணி",cm:"நிமிடம்",cs:"வினாடி",cal:"நாட்காட்டியில் சேர்க்க",close:"தங்கள் வருகையும் ஆசியும் எங்கள் மகிழ்ச்சியை நிறைவு செய்யும்.",cdt:"திருமணத்திற்கு இன்னும்",inv1:"எங்களின் முக்கியமான நாளுக்கு உங்களை அன்புடன் அழைக்கிறோம்",tt:"பயண குறிப்புகள்",tAir:"அருகிலுள்ள விமான நிலையங்கள்",tA1:"சென்னை பன்னாட்டு விமான நிலையம் (MAA)",tA1d:"திருவண்ணாமலையிலிருந்து சுமார் 175 கி.மீ · சாலை வழி சுமார் 3½ மணி நேரம் · அதிக விமான சேவைகள்",tA2:"புதுச்சேரி விமான நிலையம் (PNY)",tA2d:"திருவண்ணாமலையிலிருந்து சுமார் 100 கி.மீ · குறைந்த விமான சேவைகள்",tA3:"பெங்களூரு பன்னாட்டு விமான நிலையம் (BLR)",tA3d:"திருவண்ணாமலையிலிருந்து சுமார் 230 கி.மீ · சாலை வழி சுமார் 5 மணி நேரம்",tRail:"அருகிலுள்ள ரயில் நிலையங்கள்",tR1:"திருவண்ணாமலை ரயில் நிலையம் (TNM)",tR1d:"ஊருக்குள்ளேயே · கோவிலிலிருந்து சுமார் 2 கி.மீ · ஆட்டோ அல்லது காரில் சுமார் 10 நிமிடம்",tR2:"விழுப்புரம் சந்திப்பு (VM)",tR2d:"திருவண்ணாமலையிலிருந்து சுமார் 65 கி.மீ · சாலை வழி சுமார் 1½–2 மணி நேரம் · சென்னை மற்றும் தெற்கிலிருந்து நல்ல இணைப்பு",tR3:"காட்பாடி சந்திப்பு (KPD)",tR3d:"திருவண்ணாமலையிலிருந்து சுமார் 100 கி.மீ · சாலை வழி சுமார் 2–2½ மணி நேரம் · சென்னை, பெங்களூரு உள்ளிட்ட இடங்களிலிருந்து ரயில்கள் வரும் முக்கிய சந்திப்பு",tPick:"★ எங்கள் பரிந்துரை",tFine:"தூரங்கள் சாலை வழி தோராயமானவை.",tGood:"அறிந்து கொள்ள",tG1:"முகூர்த்தம் காலை 6:00 மணிக்குத் தொடங்குவதால், முந்தைய நாள் மாலையே திருவண்ணாமலை வந்து சேர பரிந்துரைக்கிறோம். சென்னை, விழுப்புரம், வேலூரிலிருந்து பேருந்துகளும் டாக்சிகளும் அடிக்கடி இயங்குகின்றன.",tNoteT:"எங்கள் சிறிய வேண்டுகோள்",tNote:"தயவுசெய்து உங்கள் ரயில் மற்றும் விமான டிக்கெட்டுகளை முடிந்தவரை சீக்கிரம் முன்பதிவு செய்யுங்கள். அப்போது கட்டணம் குறைவாகவும், உறுதிப்படுத்துதல் எளிதாகவும் இருக்கும். எங்கள் சிறப்பு நாளில் உங்களைக் காணும் மகிழ்ச்சி எங்களுக்குக் கிடைக்கும்.",iInv:"நீங்கள் அன்புடன் அழைக்கப்படுகிறீர்கள்",btn:"EN"}};
 let lang="en";
 function setLang(l){lang=l;document.documentElement.lang=l;document.body.classList.toggle("ta",l==="ta");
  document.querySelectorAll("[data-k]").forEach(e=>e.innerHTML=T[l][e.dataset.k]);
@@ -234,8 +475,40 @@ $("lang").onclick=()=>setLang(lang==="en"?"ta":"en");
 
 /* ---------- music ---------- */
 const bgm=$("bgm");
-document.addEventListener("click",()=>{bgm.play().catch(()=>{})},{once:true});
-$("mute").onclick=()=>{bgm.muted=!bgm.muted;$("mute").classList.toggle("muted",bgm.muted)};
+const MAX_VOL=.22,FADE_IN=3000,FADE_OUT=700,LOOP_EDGE=2.5;
+let gain=0,gainFrom=0,gainTo=0,gainT0=0,gainDur=1,raf=0,wantPlay=false;
+bgm.volume=0;
+function syncMusicUi(){const on=wantPlay;$("mute").classList.toggle("muted",!on);$("mute").setAttribute("aria-pressed",String(on));$("mute").setAttribute("aria-label",on?"Mute music":"Play music")}
+/* one loop drives the master fade plus a soft dip at the loop seam so the track restarts smoothly */
+function frame(now){
+ const k=Math.min(1,(now-gainT0)/gainDur),e=k*k*(3-2*k);
+ gain=gainFrom+(gainTo-gainFrom)*e;
+ let edge=1;
+ if(bgm.duration){const t=bgm.currentTime,left=bgm.duration-t;edge=Math.min(1,t/LOOP_EDGE+.0,left/LOOP_EDGE);edge=Math.max(0,edge);edge=edge*edge*(3-2*edge)}
+ bgm.volume=Math.max(0,Math.min(1,MAX_VOL*gain*edge));
+ if(!wantPlay&&k>=1){bgm.pause();raf=0;return}
+ raf=requestAnimationFrame(frame);
+}
+function ramp(to,dur){gainFrom=gain;gainTo=to;gainT0=performance.now();gainDur=dur;if(!raf)raf=requestAnimationFrame(frame)}
+function playMusic(){
+ if(wantPlay||bgm.error)return;
+ wantPlay=true;syncMusicUi();
+ bgm.play().then(()=>ramp(1,reduceMotion?400:FADE_IN)).catch(()=>{wantPlay=false;syncMusicUi()});
+}
+function stopMusic(){if(!wantPlay)return;wantPlay=false;syncMusicUi();ramp(0,FADE_OUT)}
+bgm.addEventListener("error",()=>{wantPlay=false;$("mute").hidden=true});
+/* browsers block audio until a gesture: the tap on the opening logo starts it, the toggle then fades it out/in */
+let started=false;
+function firstGesture(){if(started)return;started=true;document.removeEventListener("click",firstGesture);document.removeEventListener("touchend",firstGesture);playMusic()}
+document.addEventListener("click",firstGesture);document.addEventListener("touchend",firstGesture);
+$("mute").onclick=e=>{e.stopPropagation();started=true;wantPlay?stopMusic():playMusic()};
+/* pause when the tab is hidden, resume (with a fade) when it comes back */
+let resumeOnShow=false;
+document.addEventListener("visibilitychange",()=>{
+ if(document.hidden){resumeOnShow=wantPlay;if(wantPlay){wantPlay=false;gain=0;bgm.pause();if(raf){cancelAnimationFrame(raf);raf=0}}}
+ else if(resumeOnShow){resumeOnShow=false;playMusic()}
+});
+syncMusicUi();
 
 /* ---------- placeholders for missing artwork ---------- */
 $("thaliImg").onerror=function(){
@@ -262,7 +535,7 @@ $("thaliImg").onerror=function(){
  s+='<circle cx="110" cy="210" r="3.5" fill="#5c0a0a"/>';
  s+='</svg>';
  this.outerHTML=s};
-$("coupleImg").onerror=function(){if(!this.isConnected)return;this.outerHTML='<div class="ph">Couple illustration<br>(upload assets/couple.png)</div>'};
+$("coupleImg").onerror=function(){if(!this.isConnected)return;this.outerHTML='<div class="ph">Couple illustration<br>(upload assets/couple.webp)</div>'};
 if($("thaliImg").complete&&!$("thaliImg").naturalWidth)$("thaliImg").onerror();
 if($("coupleImg").complete&&!$("coupleImg").naturalWidth)$("coupleImg").onerror();
 
@@ -336,14 +609,24 @@ function initScroll(){
  ScrollTrigger.create({trigger:"#savedateOverlay",start:"top 85%",endTrigger:"#artSection",end:"top 55%",
   onEnter:lockSavedate,onLeave:unlockSavedate,onEnterBack:lockSavedate,onLeaveBack:unlockSavedate});
  gsap.utils.toArray(".rv").forEach((e,i)=>gsap.from(e,{opacity:0,y:20,duration:1,delay:(i%3)*.15,scrollTrigger:{trigger:e,start:"top 88%"}}));
- gsap.from("#startLogo",{opacity:0,duration:1.2,ease:"power2.out"});
- gsap.from("#hero",{opacity:0,duration:1.2});
+ if(!reduceMotion){
+  gsap.from("#cd div",{opacity:0,y:26,scale:.85,stagger:.12,duration:.7,ease:"back.out(1.6)",scrollTrigger:{trigger:"#cd",start:"top 95%"}});
+  gsap.from("#cal",{opacity:0,scale:.7,duration:.7,ease:"back.out(2)",scrollTrigger:{trigger:"#cal",start:"top 95%"}});
+  gsap.from("footer",{opacity:0,y:24,duration:1,scrollTrigger:{trigger:"footer",start:"top 98%"}});
+  gsap.from("#coupleImg",{opacity:0,scale:.9,duration:1.1,ease:"power2.out",scrollTrigger:{trigger:"#artSection",start:"top 85%"}});
+ }
+ gsap.timeline({scrollTrigger:{trigger:"#hero",start:"top 80%",end:"20% top",scrub:true}})
+  .fromTo("#invocation",{autoAlpha:0,y:24},{autoAlpha:1,y:0,duration:.3,ease:"none"})
+  .to("#invocation",{autoAlpha:1,duration:.4})
+  .to("#invocation",{autoAlpha:0,y:-16,duration:.3,ease:"none"});
+ const entry=gsap.timeline({paused:true}).from("#startLogo",{opacity:0,duration:1.2,ease:"power2.out"}).from("#hero",{opacity:0,duration:1.2},0);
+ window.playEntry=()=>entry.play();
 
  /* bottom progress timeline: highlights which of the 4 stages (Welcome / Save the Date / Our Story / Details) the visitor is currently on */
  const progressSteps=gsap.utils.toArray("#progressTrack .step");
  const progressLines=gsap.utils.toArray("#progressTrack .line");
  function setStep(i){
-  progressSteps.forEach((s,j)=>{s.classList.toggle("active",j===i);s.classList.toggle("done",j<i)});
+  progressSteps.forEach((s,j)=>{s.classList.toggle("active",j===i);s.classList.toggle("done",j<i);if(j===i)s.setAttribute("aria-current","step");else s.removeAttribute("aria-current")});
   progressLines.forEach((l,j)=>l.classList.toggle("done",j<i));
  }
  progressSteps.forEach((s,i)=>{
@@ -375,25 +658,120 @@ function initScroll(){
  window.addEventListener("resize",()=>{clearTimeout(window._logoResizeT);window._logoResizeT=setTimeout(setupLogoCornerAnim,200)});
 
  /* badge fades out (and is visually disabled) as the user scrolls it away, well before the logo finishes docking */
- gsap.to(".badge",{opacity:0,ease:"none",scrollTrigger:{trigger:"#start",start:"top top",end:"55% top",scrub:true}});
+ gsap.to(".badge",{autoAlpha:0,ease:"none",scrollTrigger:{trigger:"#start",start:"top top",end:"55% top",scrub:true}});
  /* re-measure all scroll triggers once every image has finished loading (and laid out), otherwise sections that load late throw off later triggers like the art-section shrink */
  window.addEventListener("load",()=>ScrollTrigger.refresh());
  $("coupleImg").addEventListener("load",()=>ScrollTrigger.refresh());
 }
 initScroll();
 
+
+/* ---------- petals, sparkles & tap bursts ---------- */
+(function(){
+ const cv=$("fx"),ctx=cv.getContext("2d");
+ let W=0,H=0,dpr=Math.min(devicePixelRatio||1,2);
+ function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+ size();addEventListener("resize",size);
+ const COLORS=["#FFD700","#FFB300","#FF8F00","#FFE082","#F8BBD0","#fff"];
+ const ps=[];
+ const rnd=(a,b)=>a+Math.random()*(b-a);
+ function petal(x,y,o={}){return{x,y,vx:o.vx??rnd(-.4,.4),vy:o.vy??rnd(.5,1.2),g:o.g??0,r:rnd(3,6.5)*(o.k||1),rot:rnd(0,6.28),vr:rnd(-.05,.05),c:COLORS[Math.random()*COLORS.length|0],a:o.a??.85,life:o.life??1e9,age:0,sway:rnd(0,6.28),amb:!!o.amb,heart:!!o.heart,spark:!!o.spark}}
+ function ambient(){ps.push(petal(rnd(0,W),-12,{amb:true,a:.6}))}
+ const maxAmb=innerWidth<500?10:18;
+ function drawHeart(r){ctx.beginPath();ctx.moveTo(0,r*.35);ctx.bezierCurveTo(-r,-r*.5,-r*.4,-r*1.1,0,-r*.4);ctx.bezierCurveTo(r*.4,-r*1.1,r,-r*.5,0,r*.35);ctx.fill()}
+ let last=0;
+ function frame(t){
+  const dt=Math.min((t-last)/16.7||1,3);last=t;
+  ctx.clearRect(0,0,W,H);
+  let amb=0;for(const p of ps)if(p.amb)amb++;
+  if(amb<maxAmb&&Math.random()<.04*dt)ambient();
+  for(let i=ps.length-1;i>=0;i--){
+   const p=ps[i];p.age+=dt;p.vy+=p.g*dt;
+   p.x+=(p.vx+(p.amb?Math.sin(p.age*.03+p.sway)*.5:0))*dt;p.y+=p.vy*dt;p.rot+=p.vr*dt;
+   const fade=p.life<1e9?Math.max(0,1-p.age/p.life):1;
+   if(p.y>H+20||p.x<-30||p.x>W+30||fade<=0){ps.splice(i,1);continue}
+   ctx.save();ctx.globalAlpha=p.a*fade;ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.c;
+   if(p.heart)drawHeart(p.r*1.6);
+   else if(p.spark){ctx.beginPath();for(let k=0;k<4;k++){const a=k*Math.PI/2;ctx.lineTo(Math.cos(a)*p.r*1.6,Math.sin(a)*p.r*1.6);ctx.lineTo(Math.cos(a+.785)*p.r*.4,Math.sin(a+.785)*p.r*.4)}ctx.fill()}
+   else{ctx.scale(1,.55+.45*Math.abs(Math.sin(p.age*.06+p.sway)));ctx.beginPath();ctx.ellipse(0,0,p.r*1.3,p.r*.7,0,0,6.28);ctx.fill()}
+   ctx.restore();
+  }
+  requestAnimationFrame(frame);
+ }
+ function burst(x,y,hearts){
+  const n=hearts?9:16;
+  for(let i=0;i<n;i++){const a=rnd(0,6.28),v=rnd(1.5,5);
+   ps.push(petal(x,y,{vx:Math.cos(a)*v,vy:Math.sin(a)*v-(hearts?2.5:1),g:hearts?-.02:.09,life:rnd(50,90),a:1,heart:hearts,spark:!hearts&&i%2===0,k:hearts?1.1:1}))}
+ }
+ function trail(x,y){ps.push(petal(x+rnd(-6,6),y+rnd(-6,6),{vx:rnd(-.5,.5),vy:rnd(.3,1),g:.03,life:rnd(30,50),a:1,spark:true,k:.7}))}
+ let lastTrail=0;
+ function onMove(x,y){const n=performance.now();if(n-lastTrail<45)return;lastTrail=n;trail(x,y)}
+ if(!reduceMotion){
+  document.addEventListener("pointermove",e=>{if(e.pointerType==="mouse")onMove(e.clientX,e.clientY)},{passive:true});
+  document.addEventListener("touchmove",e=>{const t=e.touches[0];if(t)onMove(t.clientX,t.clientY)},{passive:true});
+  document.addEventListener("pointerdown",e=>{if(e.target.closest("#mute,#lang,.progress-track"))return;burst(e.clientX,e.clientY,!!e.target.closest("#art"));if(navigator.vibrate&&e.target.closest("#art"))navigator.vibrate(15)},{passive:true});
+  for(let i=0;i<4;i++){const p=petal(rnd(0,W),rnd(0,H*.6),{amb:true,a:.6});ps.push(p)}
+  requestAnimationFrame(frame);
+ }
+})();
+
+/* hide the scroll hint after the first scroll */
+document.addEventListener("touchstart",()=>{},{passive:true});
+addEventListener("scroll",()=>$("scrollHint").classList.toggle("hide",scrollY>40),{passive:true});
+
+/* ---------- travel tips accordion ---------- */
+(function(){
+ const t=$("travelToggle"),p=$("travelPanel");
+ t.addEventListener("click",()=>{
+  const open=!p.classList.contains("open");
+  p.classList.toggle("open",open);t.setAttribute("aria-expanded",String(open));
+  if(open)setTimeout(()=>t.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"start"}),60);
+ });
+ p.addEventListener("transitionend",e=>{if(e.propertyName==="grid-template-rows"&&window.ScrollTrigger)ScrollTrigger.refresh()});
+})();
+
+/* ---------- opening page & blurred loading screen ---------- */
+(function(){
+ if("scrollRestoration" in history)history.scrollRestoration="manual";
+ scrollTo(0,0);
+ const el=$("intro"),root=document.documentElement;
+ const imgs=[...document.images];const total=imgs.length+1;let done=0;
+ let assetsReady=false;
+ const check=()=>{if(done>=total)assetsReady=true};
+ const tick=()=>{done++;check()};
+ imgs.forEach(i=>i.complete?tick():(i.addEventListener("load",tick,{once:true}),i.addEventListener("error",tick,{once:true})));
+ (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(tick);
+ function reveal(){
+  root.classList.remove("intro-lock");scrollTo(0,0);
+  if(window.ScrollTrigger)ScrollTrigger.refresh();
+  el.classList.add("done");
+  if(window.playEntry)playEntry();
+  setTimeout(()=>el.classList.add("gone"),700);
+ }
+ $("introOpen").addEventListener("click",()=>{
+  if(el.classList.contains("loading"))return;
+  el.classList.add("loading");
+  const start=performance.now(),minTime=reduceMotion?300:1500,maxTime=7000;
+  (function wait(){
+   const t=performance.now()-start;
+   if((assetsReady&&t>=minTime)||t>=maxTime)reveal();else setTimeout(wait,100);
+  })();
+ });
+})();
+
 /* ---------- countdown (IST) ---------- */
 const target=new Date("2027-01-20T06:00:00+05:30").getTime();
 function tick(){let d=Math.max(0,target-Date.now()),p=n=>String(n).padStart(2,"0");
- $("d").textContent=p(Math.floor(d/864e5));$("h").textContent=p(Math.floor(d/36e5)%24);
- $("m").textContent=p(Math.floor(d/6e4)%60);$("s").textContent=p(Math.floor(d/1e3)%60)}
+ const set=(id,v)=>{const e=$(id);if(e.textContent===v)return;e.textContent=v;if(!reduceMotion&&e.animate)e.animate([{transform:"translateY(-6px) scale(1.18)",opacity:.4},{transform:"none",opacity:1}],{duration:380,easing:"cubic-bezier(.2,.8,.3,1)"})};
+ set("d",p(Math.floor(d/864e5)));set("h",p(Math.floor(d/36e5)%24));
+ set("m",p(Math.floor(d/6e4)%60));set("s",p(Math.floor(d/1e3)%60))}
 tick();setInterval(tick,1000);
 
 /* ---------- calendar (.ics generated in page) ---------- */
 $("cal").onclick=()=>{
  const ev=(id,s,e,n,loc)=>`BEGIN:VEVENT\r\nUID:${id}@deepak-nivi-wedding\r\nDTSTAMP:20261118T000000Z\r\nDTSTART:${s}\r\nDTEND:${e}\r\nSUMMARY:${n}\r\nLOCATION:${loc}\r\nEND:VEVENT\r\n`;
  const ics="BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Wedding//EN\r\n"+
-  ev("muhurtham","20270120T003000Z","20270120T020000Z","Deepak Krishna B & Nivedha K S – Muhurtham","Arulmigu Kallyana Sunderservarar Mandabam\\, Annamalaiyar Kovil\\, Tiruvannamalai")+
+  ev("muhurtham","20270120T003000Z","20270120T020000Z","Deepak Krishna B & Nivedha K S – Muhurtham","Arulmigu Kalyana Sundareswarar Mandapam\\, Annamalaiyar Kovil\\, Tiruvannamalai")+
   ev("reception","20270120T050000Z","20270120T070000Z","Deepak Krishna B & Nivedha K S – Wedding Reception","Shri Meenachi Marriage Hall\\, Tiruvannamalai")+"END:VCALENDAR";
  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));
  a.download="deepak-nivi-wedding.ics";document.body.appendChild(a);a.click();a.remove()};
