@@ -71,13 +71,17 @@ transition:background .35s ease,width .35s ease,height .35s ease,box-shadow .35s
 .progress-track .step.active .indicator{width:11px;height:11px;background:var(--gold);box-shadow:0 0 0 3px rgba(255,215,0,.22)}
 .progress-track .step.done .indicator{background:rgba(255,215,0,.85)}
 .progress-track .line.done{background:var(--gold)}
+.nav-next{flex:none;width:40px;height:44px;margin-left:6px;padding:0;border:0;border-left:1px solid rgba(255,215,0,.3);background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:0 30px 30px 0}
+.nav-next svg{width:24px;height:24px;fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s ease}
+.nav-next.up svg{transform:rotate(180deg)}
+.nav-next:active svg,.nav-next:hover svg{filter:drop-shadow(0 0 6px rgba(255,215,0,.9))}
 @media (max-width:360px){.progress-track{padding:0 6px}.progress-track .step{width:34px}.progress-track .line{width:8px}}
 /* starting page: logo starts big & centered (fixed to the viewport), then animates (scrubbed to scroll) into a small top-left corner mark and stays docked there */
 #start{min-height:100svh;position:relative}
 #startLogo{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(240px,42vw,620px);aspect-ratio:1/1;
 opacity:1;z-index:6}
 /* badge sits below the logo medallion; its white backing is blended away so only the gold artwork shows */
-.badge{position:fixed;left:50%;top:calc(50% + clamp(140px,21vw,330px));transform:translateX(-50%);
+.badge{position:fixed;left:0;right:0;margin-inline:auto;top:calc(50% + clamp(140px,21vw,330px));
 width:clamp(220px,30vw,420px);mix-blend-mode:multiply;z-index:1;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
 /* hero */
 #hero{min-height:95svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding-top:60px}
@@ -85,6 +89,9 @@ width:clamp(220px,30vw,420px);mix-blend-mode:multiply;z-index:1;filter:drop-shad
 .hero-names span[data-k]{white-space:nowrap;display:inline-block;max-width:100%}
 .hero-names .amp{font-size:.55em;display:block}
 /* the names stay on screen (as a fixed overlay) all the way from the hero through the Ghibli-style couple art, shrinking to sit under the art once it appears, then release once the venue/reception details arrive */
+.art-names{font-family:var(--script);color:var(--gold);font-size:clamp(22px,7.4vw,52px);line-height:1.2;text-align:center;margin:18px auto 0;max-width:100%;text-shadow:0 0 14px rgba(255,215,0,.3)}
+.art-names span{display:block;white-space:nowrap;max-width:100%}
+.art-names .amp{font-size:.55em}
 .hero-names.locked{position:fixed!important;margin:0;z-index:7;top:48vh;left:50%}
 /* Save the Date dissolves in from the background at a fixed spot below the names (no sliding up), then dissolves back out once the art takes over */
 #savedate{min-height:46svh;display:flex;align-items:center;justify-content:center}
@@ -167,9 +174,6 @@ body.ta .inv-main{font-size:clamp(18px,5vw,32px);line-height:1.5}
 body.ta .inv-main{font-family:var(--script-ta);font-weight:700}
 /* ---------- motion & interaction ---------- */
 #fx{position:fixed;inset:0;width:100%;height:100%;z-index:40;pointer-events:none}
-.scroll-hint{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 76px);transform:translateX(-50%);z-index:45;pointer-events:none;color:var(--gold);transition:opacity .4s ease}
-.scroll-hint.hide{opacity:0}
-.scroll-hint svg{display:block;width:28px;height:28px;fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .card,.pin,.btn,#art img{-webkit-user-select:none;user-select:none}
 .card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
 .pin,.btn{transition:transform .15s ease,background .2s ease,box-shadow .2s ease}
@@ -185,7 +189,7 @@ body.ta .inv-main{font-family:var(--script-ta);font-weight:700}
  .badge{animation:badgeGlow 3s ease-in-out infinite}
  .btn{animation:btnPulse 2.6s ease-in-out infinite}
  .pin svg{animation:navNudge 1.8s ease-in-out infinite}
- .scroll-hint svg{animation:hintBounce 1.4s ease-in-out infinite}
+ .nav-next svg{animation:hintBounce 1.4s ease-in-out infinite}
  #cd div{animation:cdGlow 3.2s ease-in-out infinite}
  #cd div:nth-child(2){animation-delay:.4s}#cd div:nth-child(3){animation-delay:.8s}#cd div:nth-child(4){animation-delay:1.2s}
 }
@@ -195,10 +199,10 @@ body.ta .inv-main{font-family:var(--script-ta);font-weight:700}
 @keyframes badgeGlow{0%,100%{filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}50%{filter:drop-shadow(0 0 14px rgba(255,215,0,.5))}}
 @keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,215,0,.5)}60%{box-shadow:0 0 0 12px rgba(255,215,0,0)}}
 @keyframes navNudge{0%,100%{transform:translate(0,0)}50%{transform:translate(2px,-2px)}}
-@keyframes hintBounce{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(8px);opacity:1}}
+@keyframes hintBounce{0%,100%{translate:0 -3px;opacity:.55}50%{translate:0 4px;opacity:1}}
 @keyframes cdGlow{0%,100%{box-shadow:0 0 0 rgba(255,215,0,0)}50%{box-shadow:0 0 12px rgba(255,215,0,.3)}}
 /* ---------- hover (mouse) & press (finger) effects on every element; individual transform properties so they never fight GSAP ---------- */
-.sparkle-date,.sparkle-weekday,.savedate-overlay .small,.savedate-overlay p[data-k="intro"],.hero-names span[data-k],.hero-names .amp,.badge,.card h3,.card p,.cd-title,.inv-main,#details .small,footer,#thali img,#startLogo,.bar button,#cal,.pin,.card,#cd div,#art img{transition:scale .28s cubic-bezier(.3,1.5,.5,1),rotate .28s cubic-bezier(.3,1.5,.5,1),translate .28s ease,color .25s ease,background .25s ease,text-shadow .25s ease,box-shadow .25s ease,border-color .25s ease,filter .3s ease}
+.sparkle-date,.sparkle-weekday,.savedate-overlay .small,.savedate-overlay p[data-k="intro"],.hero-names span[data-k],.hero-names .amp,.art-names span,.badge,.card h3,.card p,.cd-title,.inv-main,#details .small,footer,#thali img,#startLogo,.bar button,#cal,.pin,.card,#cd div,#art img{transition:scale .28s cubic-bezier(.3,1.5,.5,1),rotate .28s cubic-bezier(.3,1.5,.5,1),translate .28s ease,color .25s ease,background .25s ease,text-shadow .25s ease,box-shadow .25s ease,border-color .25s ease,filter .3s ease}
 #thali img{transform-origin:50% 0}
 .cd-title{font-family:var(--script);color:var(--gold);font-size:clamp(22px,6.4vw,34px);line-height:1.2;margin:22px 0 0;text-align:center}
 body.ta .cd-title{font-family:var(--script-ta);font-weight:700;font-size:clamp(18px,5vw,28px)}
@@ -211,6 +215,7 @@ body.ta .cd-title{font-family:var(--script-ta);font-weight:700;font-size:clamp(1
 .savedate-overlay .small:hover{scale:1.08!important;text-shadow:0 0 14px rgba(255,215,0,.85)}
 .savedate-overlay p[data-k="intro"]:hover{scale:1.04!important;color:#fff3b0;text-shadow:0 0 14px rgba(255,215,0,.6)}
 .hero-names span[data-k]:hover{scale:1.08!important;text-shadow:0 0 18px rgba(255,215,0,.9)}
+.art-names span:hover{scale:1.08!important;text-shadow:0 0 18px rgba(255,215,0,.9)}
 .hero-names .amp:hover{scale:1.3!important;text-shadow:0 0 16px rgba(255,215,0,.9)}
 #thali img:hover{scale:1.04!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
 #startLogo:hover{scale:1.08!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
@@ -234,6 +239,7 @@ footer:hover{scale:1.04!important;text-shadow:0 0 14px rgba(255,215,0,.7)}
 .savedate-overlay .small:active{scale:1.08!important;text-shadow:0 0 14px rgba(255,215,0,.85)}
 .savedate-overlay p[data-k="intro"]:active{scale:1.04!important;color:#fff3b0;text-shadow:0 0 14px rgba(255,215,0,.6)}
 .hero-names span[data-k]:active{scale:1.08!important;text-shadow:0 0 18px rgba(255,215,0,.9)}
+.art-names span:active{scale:1.08!important;text-shadow:0 0 18px rgba(255,215,0,.9)}
 .hero-names .amp:active{scale:1.3!important;text-shadow:0 0 16px rgba(255,215,0,.9)}
 #thali img:active{scale:1.04!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
 #startLogo:active{scale:1.08!important;filter:drop-shadow(0 0 12px rgba(255,215,0,.85))!important}
@@ -328,7 +334,7 @@ body.ta .intro-sub{font-family:var(--script-ta);font-weight:700;letter-spacing:0
 .credit{margin-top:34px;padding-top:14px;border-top:1px solid rgba(255,215,0,.25);font-size:13px;line-height:1.7;opacity:.8}
 body.ta .credit p{font-family:'Noto Serif Tamil',serif;font-size:12px}
 /* looping repaint-heavy effects (text gradients, glows, pulses) pause while the page is actively scrolling, so scrolling stays smooth */
-body.scrolling .sparkle-date,body.scrolling .sparkle-weekday,body.scrolling #startLogo,body.scrolling .badge,body.scrolling #cd div,body.scrolling .btn,body.scrolling .pin svg,body.scrolling .scroll-hint svg{animation-play-state:paused}
+body.scrolling .sparkle-date,body.scrolling .sparkle-weekday,body.scrolling #startLogo,body.scrolling .badge,body.scrolling #cd div,body.scrolling .btn,body.scrolling .pin svg,body.scrolling .nav-next svg{animation-play-state:paused}
 .hero-names,.savedate-overlay{will-change:transform,opacity}
 </style>
 </head>
@@ -357,7 +363,6 @@ body.scrolling .sparkle-date,body.scrolling .sparkle-weekday,body.scrolling #sta
 
 <div class="top-fade" id="topFade" aria-hidden="true"></div>
 <canvas id="fx" aria-hidden="true"></canvas>
-<div class="scroll-hint" id="scrollHint" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 8l6 6 6-6"/><path d="M6 14l6 6 6-6"/></svg></div>
 
 <img src="assets/logo.webp" alt="D &amp; N" id="startLogo" width="500" height="500" fetchpriority="high" decoding="async">
 
@@ -393,6 +398,7 @@ body.scrolling .sparkle-date,body.scrolling .sparkle-weekday,body.scrolling #sta
 
   <section id="artSection">
     <div id="art"><img src="assets/couple.webp" alt="Deepak Krishna B and Nivedha K S" id="coupleImg" width="373" height="669" decoding="async"></div>
+    <p class="art-names" aria-hidden="true"><span data-k="groom">Deepak Krishna B</span><span class="amp">&amp;</span><span data-k="bride">Nivedha K S</span></p>
   </section>
 
   <section id="details">
@@ -467,6 +473,7 @@ body.scrolling .sparkle-date,body.scrolling .sparkle-weekday,body.scrolling #sta
   <button class="step" type="button" data-target="#artSection" aria-label="Our Story"><span class="indicator" aria-hidden="true"></span></button>
   <span class="line" aria-hidden="true"></span>
   <button class="step" type="button" data-target="#details" aria-label="Details"><span class="indicator" aria-hidden="true"></span></button>
+  <button class="nav-next" id="navNext" type="button" aria-label="Scroll down"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8l6 6 6-6"/><path d="M6 14l6 6 6-6"/></svg></button>
 </nav>
 
 <audio id="bgm" loop preload="none" src="assets/music.mp3"></audio>
@@ -604,19 +611,16 @@ function initScroll(){
  const namesEl=$("heroNames");
  gsap.set(namesEl,{xPercent:-50,yPercent:-50,opacity:0});
  const setNames=overlay(namesEl,{fadeIn:.7,fadeOut:.35,onIn:()=>gsap.fromTo(namesEl.children,{scale:.6},{scale:1,duration:.9,ease:"back.out(1.7)",overwrite:"auto",clearProps:"scale"})});
- ScrollTrigger.create({trigger:"#hero",start:"20% top",endTrigger:"#details",end:"top 75%",
+ ScrollTrigger.create({trigger:"#hero",start:"20% top",endTrigger:"#artSection",end:"top 72%",
   onToggle:self=>setNames(self.isActive)});
- /* shrink and settle under the art as it scrolls into view; transform-only (y/scale) so it never triggers layout */
- gsap.fromTo(namesEl,{y:0,scale:1},{y:()=>innerHeight*.4,scale:.62,ease:"none",
-  scrollTrigger:{trigger:"#artSection",start:"top 65%",end:"top 15%",scrub:.35,invalidateOnRefresh:true}});
-
  /* Save the Date dissolves in from the background at a fixed spot below the names (no sliding up), then dissolves back out once the art takes over */
  const sdEl=$("savedateOverlay");
- const setSavedate=overlay(sdEl,{fadeIn:1.1,fadeOut:.6});
- ScrollTrigger.create({trigger:"#savedate",start:"top+=50 85%",endTrigger:"#artSection",end:"top 55%",
+ const setSavedate=overlay(sdEl,{fadeIn:1.1,fadeOut:.35});
+ const sdST=ScrollTrigger.create({trigger:"#savedate",start:"top+=50 85%",endTrigger:"#artSection",end:"top bottom",
   onToggle:self=>setSavedate(self.isActive)});
  gsap.utils.toArray(".rv").forEach((e,i)=>gsap.from(e,{opacity:0,y:20,duration:1,delay:(i%3)*.15,scrollTrigger:{trigger:e,start:"top 88%"}}));
  if(!reduceMotion){
+  gsap.from(".art-names span",{opacity:0,y:20,scale:.9,stagger:.12,duration:.8,ease:"back.out(1.5)",scrollTrigger:{trigger:".art-names",start:"top 96%"}});
   gsap.from("#cd div",{opacity:0,y:26,scale:.85,stagger:.12,duration:.7,ease:"back.out(1.6)",scrollTrigger:{trigger:"#cd",start:"top 95%"}});
   gsap.from("#cal",{opacity:0,scale:.7,duration:.7,ease:"back.out(2)",scrollTrigger:{trigger:"#cal",start:"top 95%"}});
   gsap.from("footer",{opacity:0,y:24,duration:1,scrollTrigger:{trigger:"footer",start:"top 98%"}});
@@ -636,14 +640,37 @@ function initScroll(){
   progressSteps.forEach((s,j)=>{s.classList.toggle("active",j===i);s.classList.toggle("done",j<i);if(j===i)s.setAttribute("aria-current","step");else s.removeAttribute("aria-current")});
   progressLines.forEach((l,j)=>l.classList.toggle("done",j<i));
  }
- progressSteps.forEach((s,i)=>{
-  ScrollTrigger.create({trigger:s.dataset.target,start:"top center",end:"bottom center",
-   onEnter:()=>setStep(i),onEnterBack:()=>setStep(i)});
-  s.addEventListener("click",()=>{
-   document.querySelector(s.dataset.target).scrollIntoView({behavior:"smooth",block:"start"});
-  });
+ /* each step has a scroll position where its own screen is fully visible; the dots and the arrow button both use these, and the active dot follows the same boundaries */
+ const docTop=sel=>document.querySelector(sel).getBoundingClientRect().top+scrollY;
+ const stepY=[
+  ()=>0,
+  ()=>sdST.start+(sdST.end-sdST.start)*.45,
+  ()=>docTop("#art")-Math.max(150,innerHeight*.2),
+  ()=>docTop("#details")-90
+ ];
+ const stepFrom=[()=>0,()=>sdST.start,()=>docTop("#art")-innerHeight,()=>docTop("#details")-innerHeight*.6];
+ let curStep=0;
+ const nextBtn=$("navNext");
+ function atBottom(){return scrollY+innerHeight>=document.documentElement.scrollHeight-12}
+ function onScrollSync(){
+  let idx=0;for(let k=stepFrom.length-1;k>0;k--){if(scrollY>=stepFrom[k]()){idx=k;break}}
+  if(idx!==curStep||!onScrollSync.init){curStep=idx;onScrollSync.init=true;setStep(idx)}
+  const up=atBottom();nextBtn.classList.toggle("up",up);nextBtn.setAttribute("aria-label",up?"Back to top":"Scroll down");
+ }
+ let syncQueued=false;
+ addEventListener("scroll",()=>{if(syncQueued)return;syncQueued=true;requestAnimationFrame(()=>{syncQueued=false;onScrollSync()})},{passive:true});
+ ScrollTrigger.addEventListener("refresh",onScrollSync);
+ const goTo=y=>scrollTo({top:Math.max(0,y),behavior:reduceMotion?"auto":"smooth"});
+ progressSteps.forEach((s,i)=>s.addEventListener("click",()=>goTo(stepY[i]())));
+ nextBtn.addEventListener("click",()=>{
+  if(atBottom())return goTo(0);
+  if(curStep<stepY.length-1){
+   /* if the current step's own screen is not reached yet, go there first; otherwise advance */
+   const here=stepY[curStep]();
+   goTo(scrollY<here-40?here:stepY[curStep+1]());
+  }else goTo(document.documentElement.scrollHeight);
  });
- setStep(0);
+ onScrollSync();
 
  /* logo starts big & centered, then slides+shrinks smoothly into a small top-left corner mark as #start is scrolled through */
  let logoCornerTween=null;
@@ -656,8 +683,8 @@ function initScroll(){
   const targetSize=Math.max(64,Math.min(window.innerWidth*.11,120));
   const cornerX=16,cornerY=16;
   /* pin the logo at its centred box, then fly it to the corner with transforms only (no layout work while scrolling) */
-  gsap.set(el,{top:rect.top,left:rect.left,width:rect.width,transform:"none",transformOrigin:"0 0"});
-  logoCornerTween=gsap.to(el,{x:cornerX-rect.left,y:cornerY-rect.top,scale:targetSize/rect.width,ease:"none",
+  gsap.set(el,{top:rect.top,left:rect.left,width:rect.width,transform:"none",transformOrigin:"50% 50%"});
+  logoCornerTween=gsap.to(el,{x:cornerX+targetSize/2-(rect.left+rect.width/2),y:cornerY+targetSize/2-(rect.top+rect.height/2),scale:targetSize/rect.width,ease:"none",
    scrollTrigger:{trigger:"#start",start:"top top",end:"bottom top",scrub:true}});
   ScrollTrigger.refresh();
  }
@@ -727,7 +754,7 @@ initScroll();
 (function(){let t=0,on=false;addEventListener("scroll",()=>{if(!on){on=true;document.body.classList.add("scrolling")}clearTimeout(t);t=setTimeout(()=>{on=false;document.body.classList.remove("scrolling")},140)},{passive:true})})();
 /* hide the scroll hint after the first scroll */
 document.addEventListener("touchstart",()=>{},{passive:true});
-addEventListener("scroll",()=>$("scrollHint").classList.toggle("hide",scrollY>40),{passive:true});
+
 
 /* ---------- travel tips accordion ---------- */
 (function(){
