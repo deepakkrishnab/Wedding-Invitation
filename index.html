@@ -61,7 +61,7 @@ main,.bar{position:relative;z-index:1}
 @media (min-width:1100px){.corner-flower{width:clamp(80px,7vw,130px)}}
 /* bottom progress timeline: shows which part of the invitation the visitor is on, themed with the maroon/gold palette. Plain small round dots, no numbers/checkmarks, sized so the active/done states never collide with the connecting lines */
 .progress-track{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);transform:translateX(-50%);
-display:flex;align-items:center;z-index:60;background:rgba(50,0,0,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+display:flex;align-items:center;z-index:60;background:rgba(50,0,0,.88);
 border:1px solid rgba(255,215,0,.3);border-radius:30px;padding:0 10px;box-shadow:0 4px 16px rgba(0,0,0,.45)}
 .progress-track .step{position:relative;flex:none;width:36px;height:44px;border-radius:50%;cursor:pointer;
 border:0;background:none;padding:0;display:flex;align-items:center;justify-content:center}
@@ -81,16 +81,15 @@ opacity:1;z-index:6}
 width:clamp(220px,30vw,420px);mix-blend-mode:multiply;z-index:1;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
 /* hero */
 #hero{min-height:95svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding-top:60px}
-.hero-names{opacity:0;transform:scale(.6);font-family:var(--script);color:var(--gold);font-size:clamp(20px,8vw,64px);line-height:1.2;text-align:center;padding:0 16px;max-width:94vw}
+.hero-names{opacity:0;font-family:var(--script);color:var(--gold);font-size:clamp(20px,8vw,64px);line-height:1.2;text-align:center;padding:0 16px;max-width:94vw}
 .hero-names span[data-k]{white-space:nowrap;display:inline-block;max-width:100%}
 .hero-names .amp{font-size:.55em;display:block}
 /* the names stay on screen (as a fixed overlay) all the way from the hero through the Ghibli-style couple art, shrinking to sit under the art once it appears, then release once the venue/reception details arrive */
 .hero-names.locked{position:fixed!important;margin:0;z-index:7;top:48vh;left:50%}
 /* Save the Date dissolves in from the background at a fixed spot below the names (no sliding up), then dissolves back out once the art takes over */
 #savedate{min-height:46svh;display:flex;align-items:center;justify-content:center}
-.savedate-overlay{opacity:0;text-align:center;padding:0 var(--safe)}
+.savedate-overlay{opacity:0;text-align:center;padding:0 var(--safe);position:fixed;top:63vh;left:50%;transform:translateX(-50%);z-index:6;width:min(92vw,700px);pointer-events:none}
 .savedate-overlay.locked p{pointer-events:auto}
-.savedate-overlay.locked{position:fixed!important;top:63vh;left:50%;transform:translateX(-50%);z-index:6;width:min(92vw,700px);pointer-events:none}
 /* the marriage date revealed big and sparkling above the Save the Date label */
 .sparkle-date{font-family:var(--script);font-size:clamp(26px,7.5vw,56px);line-height:1.15;margin-bottom:2px;
 background:linear-gradient(100deg,var(--gold) 20%,#fff8dc 40%,#fff 50%,#fff8dc 60%,var(--gold) 80%);
@@ -103,7 +102,7 @@ background-size:250% 100%;-webkit-background-clip:text;background-clip:text;colo
 text-shadow:0 0 14px rgba(255,215,0,.5);animation:sparkleShine 3.2s linear infinite}
 @keyframes sparkleShine{0%{background-position:250% 0}100%{background-position:-250% 0}}
 body.ta .sparkle-date{font-family:var(--script-ta);font-weight:900;font-size:clamp(20px,5.6vw,50px)}
-.savedate-overlay.locked{top:59vh}
+body.ta .savedate-overlay{top:59vh}
 .savedate-overlay .small{white-space:normal}
 .savedate-overlay p[data-k="intro"]{font-size:clamp(15px,4.1vw,19px);line-height:1.65}
 body.ta .sparkle-weekday{font-family:var(--script-ta);font-weight:700}
@@ -184,7 +183,6 @@ body.ta .inv-main{font-family:var(--script-ta);font-weight:700}
  .corner-flower.right{animation-delay:-2s;animation-duration:5.5s}
  #startLogo{animation:logoGlow 3.6s ease-in-out infinite}
  .badge{animation:badgeGlow 3s ease-in-out infinite}
- #art img{animation:floatArt 5s ease-in-out infinite}
  .btn{animation:btnPulse 2.6s ease-in-out infinite}
  .pin svg{animation:navNudge 1.8s ease-in-out infinite}
  .scroll-hint svg{animation:hintBounce 1.4s ease-in-out infinite}
@@ -195,7 +193,6 @@ body.ta .inv-main{font-family:var(--script-ta);font-weight:700}
 @keyframes swayFlower{0%,100%{rotate:-2.5deg}50%{rotate:2.5deg}}
 @keyframes logoGlow{0%,100%{filter:drop-shadow(0 0 4px rgba(255,215,0,.15))}50%{filter:drop-shadow(0 0 16px rgba(255,215,0,.55))}}
 @keyframes badgeGlow{0%,100%{filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}50%{filter:drop-shadow(0 0 14px rgba(255,215,0,.5))}}
-@keyframes floatArt{0%,100%{translate:0 0}50%{translate:0 -7px}}
 @keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,215,0,.5)}60%{box-shadow:0 0 0 12px rgba(255,215,0,0)}}
 @keyframes navNudge{0%,100%{transform:translate(0,0)}50%{transform:translate(2px,-2px)}}
 @keyframes hintBounce{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(8px);opacity:1}}
@@ -309,6 +306,10 @@ html.intro-lock,html.intro-lock body{overflow:hidden!important}
 .intro-logo-btn{border:0;background:none;padding:0;border-radius:50%;cursor:pointer;line-height:0;transition:scale .28s cubic-bezier(.3,1.5,.5,1),filter .3s ease}
 .intro-logo-btn img{width:clamp(180px,56vw,300px);height:auto;aspect-ratio:1/1}
 .intro-logo-btn:focus-visible{outline:2px solid var(--gold);outline-offset:6px}
+.intro-tap{font-family:var(--script);font-size:clamp(26px,7.4vw,36px);line-height:1.2;color:var(--gold);text-shadow:0 0 14px rgba(255,215,0,.45)}
+body.ta .intro-tap{font-family:var(--script-ta);font-weight:700;font-size:clamp(20px,5.6vw,28px)}
+@media (prefers-reduced-motion:no-preference){.intro-tap{animation:introIn .8s ease both,tapPulse 1.8s ease-in-out .8s infinite}}
+@keyframes tapPulse{0%,100%{opacity:.55;translate:0 0}50%{opacity:1;translate:0 6px}}
 .intro-sub{font-size:clamp(14px,4vw,18px);letter-spacing:.24em;text-transform:uppercase;color:#f3d9a4}
 body.ta .intro-sub{font-family:var(--script-ta);font-weight:700;letter-spacing:0;text-transform:none}
 .intro-spin{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s ease .15s}
@@ -319,10 +320,16 @@ body.ta .intro-sub{font-family:var(--script-ta);font-weight:700;letter-spacing:0
 @keyframes introIn{from{opacity:0;translate:0 16px}to{opacity:1;translate:0 0}}
 .intro-open>*{animation:introIn .8s ease both}
 .intro-open>:nth-child(2){animation-delay:.25s}
+.intro-open>:nth-child(3){animation-delay:.45s}
 @media (prefers-reduced-motion:no-preference){.intro-logo-btn img{animation:logoGlow 3.6s ease-in-out infinite,introBreath 3.6s ease-in-out infinite}}
 @media (prefers-reduced-motion:reduce){.intro-spin img{animation-duration:12s}}
 @media (hover:hover){.intro-logo-btn:hover{scale:1.06;filter:drop-shadow(0 0 16px rgba(255,215,0,.85))}}
 .intro-logo-btn:active{scale:1.06;filter:drop-shadow(0 0 16px rgba(255,215,0,.85))}
+.credit{margin-top:34px;padding-top:14px;border-top:1px solid rgba(255,215,0,.25);font-size:13px;line-height:1.7;opacity:.8}
+body.ta .credit p{font-family:'Noto Serif Tamil',serif;font-size:12px}
+/* looping repaint-heavy effects (text gradients, glows, pulses) pause while the page is actively scrolling, so scrolling stays smooth */
+body.scrolling .sparkle-date,body.scrolling .sparkle-weekday,body.scrolling #startLogo,body.scrolling .badge,body.scrolling #cd div,body.scrolling .btn,body.scrolling .pin svg,body.scrolling .scroll-hint svg{animation-play-state:paused}
+.hero-names,.savedate-overlay{will-change:transform,opacity}
 </style>
 </head>
 <body>
@@ -331,6 +338,7 @@ body.ta .intro-sub{font-family:var(--script-ta);font-weight:700;letter-spacing:0
   <div class="intro-blur"></div>
   <div class="intro-solid"></div>
   <div class="intro-open">
+    <p class="intro-tap" data-k="iTap">Tap to open</p>
     <button class="intro-logo-btn" id="introOpen" type="button" aria-label="Open the invitation"><img src="assets/logo.webp" alt="D &amp; N" width="500" height="500"></button>
     <p class="intro-sub" data-k="iInv">You are invited</p>
   </div>
@@ -444,6 +452,10 @@ body.ta .intro-sub{font-family:var(--script-ta);font-weight:700;letter-spacing:0
         </div>
       </div></div>
     </div>
+    <div class="credit">
+      <p data-k="cr1">© 2026–2027 Deepak Krishna B. All rights reserved.</p>
+      <p data-k="cr2">Made with ♥ by Deepak Krishna B</p>
+    </div>
   </section>
 </main>
 
@@ -465,8 +477,8 @@ const $=id=>document.getElementById(id);
 const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
 /* ---------- language ---------- */
 const T={
-en:{save:"Save the Date",intro:"With the blessings of the Almighty and our elders, we joyfully invite you to our wedding.",groom:"Deepak Krishna B",bride:"Nivedha K S",date:"Wednesday, 20 January 2027",weekday:"Wednesday",datebig:"20 January 2027",e1:"Muhurtham",t1:"6:00 AM – 7:30 AM",v1:"Arulmigu Kalyana Sundareswarar Mandapam,<br>Annamalaiyar Kovil, Tiruvannamalai",e2:"Wedding Reception",t2:"10:30 AM",v2:"Shri Meenachi Marriage Hall,<br>Tiruvannamalai",map:"Navigate",map2:"Navigate",cd:"Days",ch:"Hours",cm:"Minutes",cs:"Seconds",cal:"Add to Calendar",close:"Your presence and blessings will make our day complete.",cdt:"Countdown to the wedding",inv1:"You are invited to our special day!",tt:"Travel Tips",tAir:"Nearest airports",tA1:"Chennai International (MAA)",tA1d:"≈ 175 km from Tiruvannamalai · about 3½ hrs by road · most flight options",tA2:"Puducherry (PNY)",tA2d:"≈ 100 km from Tiruvannamalai · limited flights",tA3:"Bengaluru International (BLR)",tA3d:"≈ 230 km from Tiruvannamalai · about 5 hrs by road",tRail:"Nearest railway stations",tR1:"Tiruvannamalai (TNM)",tR1d:"In the town · ≈ 2 km from the temple · about 10 min by auto or car",tR2:"Villupuram Jn (VM)",tR2d:"≈ 65 km from Tiruvannamalai · about 1½–2 hrs by road · good connections from Chennai and the south",tR3:"Katpadi Jn (KPD)",tR3d:"≈ 100 km from Tiruvannamalai · about 2–2½ hrs by road · major junction with trains from Chennai, Bengaluru and beyond",tPick:"★ Our pick",tFine:"Distances are approximate road distances.",tGood:"Good to know",tG1:"The Muhurtham begins at 6:00 AM, so we suggest reaching Tiruvannamalai the evening before. Buses and taxis run regularly from Chennai, Villupuram and Vellore.",tNoteT:"A small request from us",tNote:"Please book your train and flight tickets as early as you can. You'll get better fares and an easier confirmation, and we'll have the joy of seeing you with us on our special day.",iInv:"You are invited",btn:"தமிழ்"},
-ta:{save:"தேதியைக் குறித்துக் கொள்ளுங்கள்",intro:"பெரியோர்களின் ஆசியுடன் எங்கள் திருமணத்திற்கு உங்களை அன்புடன் அழைக்கிறோம்.",groom:"தீபக் கிருஷ்ணா பி",bride:"நிவேதா கே எஸ்",date:"புதன்கிழமை, 20 ஜனவரி 2027",weekday:"புதன்கிழமை",datebig:"20 ஜனவரி 2027",e1:"முகூர்த்தம்",t1:"காலை 6:00 – 7:30",v1:"அருள்மிகு கல்யாண சுந்தரேஸ்வரர் மண்டபம்,<br>அண்ணாமலையார் கோவில், திருவண்ணாமலை",e2:"திருமண வரவேற்பு",t2:"காலை 10:30",v2:"ஸ்ரீ மீனாட்சி திருமண மண்டபம்,<br>திருவண்ணாமலை",map:"வழி காட்டு",map2:"வழி காட்டு",cd:"நாட்கள்",ch:"மணி",cm:"நிமிடம்",cs:"வினாடி",cal:"நாட்காட்டியில் சேர்க்க",close:"தங்கள் வருகையும் ஆசியும் எங்கள் மகிழ்ச்சியை நிறைவு செய்யும்.",cdt:"திருமணத்திற்கு இன்னும்",inv1:"எங்களின் முக்கியமான நாளுக்கு உங்களை அன்புடன் அழைக்கிறோம்",tt:"பயண குறிப்புகள்",tAir:"அருகிலுள்ள விமான நிலையங்கள்",tA1:"சென்னை பன்னாட்டு விமான நிலையம் (MAA)",tA1d:"திருவண்ணாமலையிலிருந்து சுமார் 175 கி.மீ · சாலை வழி சுமார் 3½ மணி நேரம் · அதிக விமான சேவைகள்",tA2:"புதுச்சேரி விமான நிலையம் (PNY)",tA2d:"திருவண்ணாமலையிலிருந்து சுமார் 100 கி.மீ · குறைந்த விமான சேவைகள்",tA3:"பெங்களூரு பன்னாட்டு விமான நிலையம் (BLR)",tA3d:"திருவண்ணாமலையிலிருந்து சுமார் 230 கி.மீ · சாலை வழி சுமார் 5 மணி நேரம்",tRail:"அருகிலுள்ள ரயில் நிலையங்கள்",tR1:"திருவண்ணாமலை ரயில் நிலையம் (TNM)",tR1d:"ஊருக்குள்ளேயே · கோவிலிலிருந்து சுமார் 2 கி.மீ · ஆட்டோ அல்லது காரில் சுமார் 10 நிமிடம்",tR2:"விழுப்புரம் சந்திப்பு (VM)",tR2d:"திருவண்ணாமலையிலிருந்து சுமார் 65 கி.மீ · சாலை வழி சுமார் 1½–2 மணி நேரம் · சென்னை மற்றும் தெற்கிலிருந்து நல்ல இணைப்பு",tR3:"காட்பாடி சந்திப்பு (KPD)",tR3d:"திருவண்ணாமலையிலிருந்து சுமார் 100 கி.மீ · சாலை வழி சுமார் 2–2½ மணி நேரம் · சென்னை, பெங்களூரு உள்ளிட்ட இடங்களிலிருந்து ரயில்கள் வரும் முக்கிய சந்திப்பு",tPick:"★ எங்கள் பரிந்துரை",tFine:"தூரங்கள் சாலை வழி தோராயமானவை.",tGood:"அறிந்து கொள்ள",tG1:"முகூர்த்தம் காலை 6:00 மணிக்குத் தொடங்குவதால், முந்தைய நாள் மாலையே திருவண்ணாமலை வந்து சேர பரிந்துரைக்கிறோம். சென்னை, விழுப்புரம், வேலூரிலிருந்து பேருந்துகளும் டாக்சிகளும் அடிக்கடி இயங்குகின்றன.",tNoteT:"எங்கள் சிறிய வேண்டுகோள்",tNote:"தயவுசெய்து உங்கள் ரயில் மற்றும் விமான டிக்கெட்டுகளை முடிந்தவரை சீக்கிரம் முன்பதிவு செய்யுங்கள். அப்போது கட்டணம் குறைவாகவும், உறுதிப்படுத்துதல் எளிதாகவும் இருக்கும். எங்கள் சிறப்பு நாளில் உங்களைக் காணும் மகிழ்ச்சி எங்களுக்குக் கிடைக்கும்.",iInv:"நீங்கள் அன்புடன் அழைக்கப்படுகிறீர்கள்",btn:"EN"}};
+en:{save:"Save the Date",intro:"With the blessings of the Almighty and our elders, we joyfully invite you to our wedding.",groom:"Deepak Krishna B",bride:"Nivedha K S",date:"Wednesday, 20 January 2027",weekday:"Wednesday",datebig:"20 January 2027",e1:"Muhurtham",t1:"6:00 AM – 7:30 AM",v1:"Arulmigu Kalyana Sundareswarar Mandapam,<br>Annamalaiyar Kovil, Tiruvannamalai",e2:"Wedding Reception",t2:"10:30 AM",v2:"Shri Meenachi Marriage Hall,<br>Tiruvannamalai",map:"Navigate",map2:"Navigate",cd:"Days",ch:"Hours",cm:"Minutes",cs:"Seconds",cal:"Add to Calendar",close:"Your presence and blessings will make our day complete.",cdt:"Countdown to the wedding",inv1:"You are invited to our special day!",tt:"Travel Tips",tAir:"Nearest airports",tA1:"Chennai International (MAA)",tA1d:"≈ 175 km from Tiruvannamalai · about 3½ hrs by road · most flight options",tA2:"Puducherry (PNY)",tA2d:"≈ 100 km from Tiruvannamalai · limited flights",tA3:"Bengaluru International (BLR)",tA3d:"≈ 230 km from Tiruvannamalai · about 5 hrs by road",tRail:"Nearest railway stations",tR1:"Tiruvannamalai (TNM)",tR1d:"In the town · ≈ 2 km from the temple · about 10 min by auto or car",tR2:"Villupuram Jn (VM)",tR2d:"≈ 65 km from Tiruvannamalai · about 1½–2 hrs by road · good connections from Chennai and the south",tR3:"Katpadi Jn (KPD)",tR3d:"≈ 100 km from Tiruvannamalai · about 2–2½ hrs by road · major junction with trains from Chennai, Bengaluru and beyond",tPick:"★ Our pick",tFine:"Distances are approximate road distances.",tGood:"Good to know",tG1:"The Muhurtham begins at 6:00 AM, so we suggest reaching Tiruvannamalai the evening before. Buses and taxis run regularly from Chennai, Villupuram and Vellore.",tNoteT:"A small request from us",tNote:"Please book your train and flight tickets as early as you can. You'll get better fares and an easier confirmation, and we'll have the joy of seeing you with us on our special day.",iInv:"You are invited",iTap:"Tap to open",cr1:"© 2026–2027 Deepak Krishna B. All rights reserved.",cr2:"Made with ♥ by Deepak Krishna B",btn:"தமிழ்"},
+ta:{save:"தேதியைக் குறித்துக் கொள்ளுங்கள்",intro:"பெரியோர்களின் ஆசியுடன் எங்கள் திருமணத்திற்கு உங்களை அன்புடன் அழைக்கிறோம்.",groom:"தீபக் கிருஷ்ணா B",bride:"நிவேதா K S",date:"புதன்கிழமை, 20 ஜனவரி 2027",weekday:"புதன்கிழமை",datebig:"20 ஜனவரி 2027",e1:"முகூர்த்தம்",t1:"காலை 6:00 – 7:30",v1:"அருள்மிகு கல்யாண சுந்தரேஸ்வரர் மண்டபம்,<br>அண்ணாமலையார் கோவில், திருவண்ணாமலை",e2:"திருமண வரவேற்பு",t2:"காலை 10:30",v2:"ஸ்ரீ மீனாட்சி திருமண மண்டபம்,<br>திருவண்ணாமலை",map:"வழி காட்டு",map2:"வழி காட்டு",cd:"நாட்கள்",ch:"மணி",cm:"நிமிடம்",cs:"வினாடி",cal:"நாட்காட்டியில் சேர்க்க",close:"தங்கள் வருகையும் ஆசியும் எங்கள் மகிழ்ச்சியை நிறைவு செய்யும்.",cdt:"திருமணத்திற்கு இன்னும்",inv1:"எங்களின் முக்கியமான நாளுக்கு உங்களை அன்புடன் அழைக்கிறோம்",tt:"பயண குறிப்புகள்",tAir:"அருகிலுள்ள விமான நிலையங்கள்",tA1:"சென்னை பன்னாட்டு விமான நிலையம் (MAA)",tA1d:"திருவண்ணாமலையிலிருந்து சுமார் 175 கி.மீ · சாலை வழி சுமார் 3½ மணி நேரம் · அதிக விமான சேவைகள்",tA2:"புதுச்சேரி விமான நிலையம் (PNY)",tA2d:"திருவண்ணாமலையிலிருந்து சுமார் 100 கி.மீ · குறைந்த விமான சேவைகள்",tA3:"பெங்களூரு பன்னாட்டு விமான நிலையம் (BLR)",tA3d:"திருவண்ணாமலையிலிருந்து சுமார் 230 கி.மீ · சாலை வழி சுமார் 5 மணி நேரம்",tRail:"அருகிலுள்ள ரயில் நிலையங்கள்",tR1:"திருவண்ணாமலை ரயில் நிலையம் (TNM)",tR1d:"ஊருக்குள்ளேயே · கோவிலிலிருந்து சுமார் 2 கி.மீ · ஆட்டோ அல்லது காரில் சுமார் 10 நிமிடம்",tR2:"விழுப்புரம் சந்திப்பு (VM)",tR2d:"திருவண்ணாமலையிலிருந்து சுமார் 65 கி.மீ · சாலை வழி சுமார் 1½–2 மணி நேரம் · சென்னை மற்றும் தெற்கிலிருந்து நல்ல இணைப்பு",tR3:"காட்பாடி சந்திப்பு (KPD)",tR3d:"திருவண்ணாமலையிலிருந்து சுமார் 100 கி.மீ · சாலை வழி சுமார் 2–2½ மணி நேரம் · சென்னை, பெங்களூரு உள்ளிட்ட இடங்களிலிருந்து ரயில்கள் வரும் முக்கிய சந்திப்பு",tPick:"★ எங்கள் பரிந்துரை",tFine:"தூரங்கள் சாலை வழி தோராயமானவை.",tGood:"அறிந்து கொள்ள",tG1:"முகூர்த்தம் காலை 6:00 மணிக்குத் தொடங்குவதால், முந்தைய நாள் மாலையே திருவண்ணாமலை வந்து சேர பரிந்துரைக்கிறோம். சென்னை, விழுப்புரம், வேலூரிலிருந்து பேருந்துகளும் டாக்சிகளும் அடிக்கடி இயங்குகின்றன.",tNoteT:"எங்கள் சிறிய வேண்டுகோள்",tNote:"தயவுசெய்து உங்கள் ரயில் மற்றும் விமான டிக்கெட்டுகளை முடிந்தவரை சீக்கிரம் முன்பதிவு செய்யுங்கள். அப்போது கட்டணம் குறைவாகவும், உறுதிப்படுத்துதல் எளிதாகவும் இருக்கும். எங்கள் சிறப்பு நாளில் உங்களைக் காணும் மகிழ்ச்சி எங்களுக்குக் கிடைக்கும்.",iInv:"நீங்கள் அன்புடன் அழைக்கப்படுகிறீர்கள்",iTap:"திறக்கத் தட்டவும்",cr1:"© 2026–2027 தீபக் கிருஷ்ணா B. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",cr2:"உருவாக்கியவர்: தீபக் கிருஷ்ணா B",btn:"EN"}};
 let lang="en";
 function setLang(l){lang=l;document.documentElement.lang=l;document.body.classList.toggle("ta",l==="ta");
  document.querySelectorAll("[data-k]").forEach(e=>e.innerHTML=T[l][e.dataset.k]);
@@ -556,13 +568,14 @@ function initScroll(){
   const rect=el.getBoundingClientRect();
   el.classList.add("locked");
   gsap.set(el,{top:rect.top,height:rect.height,y:0});
-  gsap.to(el,{top:0,height:peekHeight(),duration:.7,ease:"power2.out"});
+  gsap.to(el,{top:0,height:peekHeight(),duration:.7,ease:"power2.out",overwrite:"auto"});
   $("topFade").classList.add("show");
  }
  function unlockThali(){
   const el=$("thali");
   if(!el.classList.contains("locked"))return;
-  gsap.killTweensOf(el);
+  /* only stop the lock tween; the scrubbed drift tween on this element must survive so a round trip looks identical */
+  gsap.killTweensOf(el,"top,height");
   el.classList.remove("locked");
   gsap.set(el,{clearProps:"top,height"});
   $("topFade").classList.remove("show");
@@ -572,48 +585,42 @@ function initScroll(){
   if(el.classList.contains("locked"))gsap.set(el,{top:0,height:peekHeight()});
  });
  ScrollTrigger.create({trigger:"#hero",start:"20% top",endTrigger:document.body,end:"bottom bottom",
-  onEnter:lockThali,onLeaveBack:unlockThali});
- /* bride & groom names pop in and stay on screen as a fixed overlay all the way through Save the Date and the couple art, shrinking to rest under the art, then release once the venue/reception details arrive */
- function lockNames(){
-  const el=$("heroNames");
-  if(el.classList.contains("locked"))return;
-  el.classList.add("locked");
-  gsap.set(el,{xPercent:-50,yPercent:-50,scale:.6,opacity:0});
-  gsap.to(el,{opacity:1,scale:1,duration:.9,ease:"back.out(1.7)"});
+  onToggle:self=>self.isActive?lockThali():unlockThali()});
+
+ /* fixed overlays (names, Save the Date) are driven by their desired on/off state, never by a half-finished tween, so fast scrolling or jumping back to the top can't leave them stranded */
+ function overlay(el,{onIn,fadeIn,fadeOut}){
+  let on=false;
+  return function set(next){
+   if(next===on)return;on=next;
+   if(on){
+    el.classList.add("locked");
+    gsap.to(el,{opacity:1,duration:fadeIn,ease:"power1.out",overwrite:"auto"});
+    if(onIn)onIn();
+   }else{
+    gsap.to(el,{opacity:0,duration:fadeOut,ease:"none",overwrite:"auto",onComplete:()=>{if(!on)el.classList.remove("locked")}});
+   }
+  };
  }
- function unlockNames(){
-  const el=$("heroNames");
-  if(!el.classList.contains("locked"))return;
-  gsap.killTweensOf(el);
-  gsap.to(el,{opacity:0,duration:.4,onComplete:()=>{el.classList.remove("locked");gsap.set(el,{clearProps:"all"})}});
- }
+ const namesEl=$("heroNames");
+ gsap.set(namesEl,{xPercent:-50,yPercent:-50,opacity:0});
+ const setNames=overlay(namesEl,{fadeIn:.7,fadeOut:.35,onIn:()=>gsap.fromTo(namesEl.children,{scale:.6},{scale:1,duration:.9,ease:"back.out(1.7)",overwrite:"auto",clearProps:"scale"})});
  ScrollTrigger.create({trigger:"#hero",start:"20% top",endTrigger:"#details",end:"top 75%",
-  onEnter:lockNames,onLeave:unlockNames,onEnterBack:lockNames,onLeaveBack:unlockNames});
- /* shrink and settle under the art as it scrolls into view (explicit fromTo so GSAP never captures the unlocked natural flow position as its start) */
- gsap.fromTo("#heroNames",{top:"48vh",scale:1},{top:"88vh",scale:.62,ease:"none",
-  scrollTrigger:{trigger:"#artSection",start:"top 65%",end:"top 15%",scrub:true}});
+  onToggle:self=>setNames(self.isActive)});
+ /* shrink and settle under the art as it scrolls into view; transform-only (y/scale) so it never triggers layout */
+ gsap.fromTo(namesEl,{y:0,scale:1},{y:()=>innerHeight*.4,scale:.62,ease:"none",
+  scrollTrigger:{trigger:"#artSection",start:"top 65%",end:"top 15%",scrub:.35,invalidateOnRefresh:true}});
 
  /* Save the Date dissolves in from the background at a fixed spot below the names (no sliding up), then dissolves back out once the art takes over */
- function lockSavedate(){
-  const el=$("savedateOverlay");
-  if(el.classList.contains("locked"))return;
-  el.classList.add("locked");
-  gsap.to(el,{opacity:1,duration:1.1,ease:"power1.out"});
- }
- function unlockSavedate(){
-  const el=$("savedateOverlay");
-  if(!el.classList.contains("locked"))return;
-  gsap.killTweensOf(el);
-  gsap.to(el,{opacity:0,duration:.6,onComplete:()=>{el.classList.remove("locked");gsap.set(el,{clearProps:"all"})}});
- }
- ScrollTrigger.create({trigger:"#savedateOverlay",start:"top 85%",endTrigger:"#artSection",end:"top 55%",
-  onEnter:lockSavedate,onLeave:unlockSavedate,onEnterBack:lockSavedate,onLeaveBack:unlockSavedate});
+ const sdEl=$("savedateOverlay");
+ const setSavedate=overlay(sdEl,{fadeIn:1.1,fadeOut:.6});
+ ScrollTrigger.create({trigger:"#savedate",start:"top+=50 85%",endTrigger:"#artSection",end:"top 55%",
+  onToggle:self=>setSavedate(self.isActive)});
  gsap.utils.toArray(".rv").forEach((e,i)=>gsap.from(e,{opacity:0,y:20,duration:1,delay:(i%3)*.15,scrollTrigger:{trigger:e,start:"top 88%"}}));
  if(!reduceMotion){
   gsap.from("#cd div",{opacity:0,y:26,scale:.85,stagger:.12,duration:.7,ease:"back.out(1.6)",scrollTrigger:{trigger:"#cd",start:"top 95%"}});
   gsap.from("#cal",{opacity:0,scale:.7,duration:.7,ease:"back.out(2)",scrollTrigger:{trigger:"#cal",start:"top 95%"}});
   gsap.from("footer",{opacity:0,y:24,duration:1,scrollTrigger:{trigger:"footer",start:"top 98%"}});
-  gsap.from("#coupleImg",{opacity:0,scale:.9,duration:1.1,ease:"power2.out",scrollTrigger:{trigger:"#artSection",start:"top 85%"}});
+  gsap.from("#coupleImg",{opacity:0,duration:.9,ease:"power1.out",scrollTrigger:{trigger:"#artSection",start:"top 85%"}});
  }
  gsap.timeline({scrollTrigger:{trigger:"#hero",start:"top 80%",end:"20% top",scrub:true}})
   .fromTo("#invocation",{autoAlpha:0,y:24},{autoAlpha:1,y:0,duration:.3,ease:"none"})
@@ -643,13 +650,14 @@ function initScroll(){
  function setupLogoCornerAnim(){
   const el=$("startLogo");
   if(logoCornerTween){logoCornerTween.scrollTrigger.kill();logoCornerTween.kill()}
-  gsap.set(el,{clearProps:"top,left,width,transform"});
+  gsap.set(el,{clearProps:"top,left,width,transform,x,y,scale"});
   const rect=el.getBoundingClientRect();
   if(!rect.width){requestAnimationFrame(setupLogoCornerAnim);return}
   const targetSize=Math.max(64,Math.min(window.innerWidth*.11,120));
   const cornerX=16,cornerY=16;
-  gsap.set(el,{top:rect.top,left:rect.left,width:rect.width,transform:"none"});
-  logoCornerTween=gsap.to(el,{top:cornerY,left:cornerX,width:targetSize,ease:"none",
+  /* pin the logo at its centred box, then fly it to the corner with transforms only (no layout work while scrolling) */
+  gsap.set(el,{top:rect.top,left:rect.left,width:rect.width,transform:"none",transformOrigin:"0 0"});
+  logoCornerTween=gsap.to(el,{x:cornerX-rect.left,y:cornerY-rect.top,scale:targetSize/rect.width,ease:"none",
    scrollTrigger:{trigger:"#start",start:"top top",end:"bottom top",scrub:true}});
   ScrollTrigger.refresh();
  }
@@ -669,7 +677,7 @@ initScroll();
 /* ---------- petals, sparkles & tap bursts ---------- */
 (function(){
  const cv=$("fx"),ctx=cv.getContext("2d");
- let W=0,H=0,dpr=Math.min(devicePixelRatio||1,2);
+ let W=0,H=0,dpr=1;
  function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
  size();addEventListener("resize",size);
  const COLORS=["#FFD700","#FFB300","#FF8F00","#FFE082","#F8BBD0","#fff"];
@@ -681,6 +689,7 @@ initScroll();
  function drawHeart(r){ctx.beginPath();ctx.moveTo(0,r*.35);ctx.bezierCurveTo(-r,-r*.5,-r*.4,-r*1.1,0,-r*.4);ctx.bezierCurveTo(r*.4,-r*1.1,r,-r*.5,0,r*.35);ctx.fill()}
  let last=0;
  function frame(t){
+  if(t-last<30){requestAnimationFrame(frame);return}
   const dt=Math.min((t-last)/16.7||1,3);last=t;
   ctx.clearRect(0,0,W,H);
   let amb=0;for(const p of ps)if(p.amb)amb++;
@@ -708,13 +717,14 @@ initScroll();
  function onMove(x,y){const n=performance.now();if(n-lastTrail<45)return;lastTrail=n;trail(x,y)}
  if(!reduceMotion){
   document.addEventListener("pointermove",e=>{if(e.pointerType==="mouse")onMove(e.clientX,e.clientY)},{passive:true});
-  document.addEventListener("touchmove",e=>{const t=e.touches[0];if(t)onMove(t.clientX,t.clientY)},{passive:true});
   document.addEventListener("pointerdown",e=>{if(e.target.closest("#mute,#lang,.progress-track"))return;burst(e.clientX,e.clientY,!!e.target.closest("#art"));if(navigator.vibrate&&e.target.closest("#art"))navigator.vibrate(15)},{passive:true});
   for(let i=0;i<4;i++){const p=petal(rnd(0,W),rnd(0,H*.6),{amb:true,a:.6});ps.push(p)}
   requestAnimationFrame(frame);
  }
 })();
 
+/* flag active scrolling (rAF-throttled) so CSS can pause expensive looping effects */
+(function(){let t=0,on=false;addEventListener("scroll",()=>{if(!on){on=true;document.body.classList.add("scrolling")}clearTimeout(t);t=setTimeout(()=>{on=false;document.body.classList.remove("scrolling")},140)},{passive:true})})();
 /* hide the scroll hint after the first scroll */
 document.addEventListener("touchstart",()=>{},{passive:true});
 addEventListener("scroll",()=>$("scrollHint").classList.toggle("hide",scrollY>40),{passive:true});
